@@ -1,59 +1,59 @@
-# AI Coding 团队化实战
+<p align="center"><a href="https://daviddingxu.github.io/ai-coding-for-teams/"><img src="docs/assets/readme-cover.png" alt="AI Coding 团队化实战" width="100%"></a></p>
 
-<p align="center">
-  <a href="https://daviddingxu.github.io/ai-coding-for-teams/"><img src="docs/assets/readme-cover.svg" alt="AI Coding 团队化实战：14 篇完整文章  /  5 个模块  /  团队落地手册" width="100%"></a>
-</p>
+<h1 align="center">AI Coding 团队化实战</h1>
+<p align="center"><strong>让一个团队，稳定用好 AI。</strong></p>
+<p align="center">课程已完结 · 14 篇完整文章 · 免费阅读</p>
+<p align="center"><a href="https://daviddingxu.github.io/ai-coding-for-teams/"><strong>在线阅读 →</strong></a> &nbsp; / &nbsp; <a href="#文章目录">文章目录</a> &nbsp; / &nbsp; <a href="https://daviddingxu.github.io/ai-coding-for-teams/downloads/ai-coding-for-teams.pdf">PDF</a> &nbsp; / &nbsp; <a href="https://daviddingxu.github.io/ai-coding-for-teams/downloads/ai-coding-for-teams.epub">EPUB</a></p>
 
-<p align="center"><a href="https://daviddingxu.github.io/ai-coding-for-teams/"><strong>开始阅读 →</strong></a> &nbsp;·&nbsp; <a href="docs/course/README.md"><strong>完整目录</strong></a> &nbsp;·&nbsp; <a href="#落地实践"><strong>落地实践</strong></a></p>
+---
 
-<p align="center"><img src="https://img.shields.io/badge/%E8%AF%BE%E7%A8%8B-%E5%B7%B2%E5%AE%8C%E7%BB%93-2f7d4a?style=flat-square" alt="课程：已完结"> <img src="https://img.shields.io/badge/%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4-%E9%9D%9E%E5%95%86%E4%B8%9A-64776d?style=flat-square" alt="使用范围：非商业"></p>
+个人能用 AI 写出代码，团队为什么仍然难以交付？这门课程从这个问题出发，梳理规则、上下文、任务、验证和协作之间的关系。
 
-把个人 AI Coding 经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求出发，建立规则、上下文、任务、验证和协作的共同约定。
+适合技术负责人、研发效能团队，以及正在把个人经验推广到团队的开发者。14 篇文章已全部公开，按顺序阅读即可理解整套方法。
 
-## 适合谁学
+你会沿着一条团队交付链往下读：
 
-适合正在推动 AI Coding 的技术负责人、架构师、研发效能团队，以及已有个人使用经验、希望开展团队协作的开发者。
+**共同规则 → 需求拆分 → 有界上下文 → 小步交付 → 验证与接管 → 经验复用**
 
-课程讨论一套团队共同使用的工程流程：需求如何进入任务、规则由谁维护、上下文如何选择、交付怎样验证、其他人如何审查和接管。仓库提供完整正文、流程图、目录模板、数据结构与实践清单。
+刚开始建设团队流程，可以先通读；已经遇到具体问题，可以从下面的文章直接进入。
 
-## 学完能做什么
+## 文章目录
 
-- 划清共享运行时、团队规则、应用规则与工具适配的职责。
-- 将复杂需求拆成范围明确的任务，让设计、实现和审查有稳定产物可依据。
-- 区分历史失败与本次回归，保留验证记录，支持交付审查、任务接管和经验复用。
+### 从个人经验到团队系统
 
-## 课程路线
+- 00 · [个人会用 AI Coding，为什么团队还是用不好？](00-overview.md)
+- 01 · [共享运行时：不要让每个应用都重复建设 Agent](01-shared-runtime.md)
+- 02 · [SPEC 体系：把规则从 Prompt 里拿出来](02-spec-system.md)
 
-| 模块 | 文章 | 学习重点 |
-| --- | --- | --- |
-| [从个人经验到团队系统](docs/course/README.md#module-01) | 00–02 | 共享运行时、团队与应用 SPEC、规则所有权 |
-| [从复杂需求到可审查交付](docs/course/README.md#module-02) | 03–06 | 需求拆分、有界上下文、阶段产物与 Task 化开发 |
-| [从一次成功到持续复用](docs/course/README.md#module-03) | 07–08 | 验证基线、失败归因、规则与案例沉淀 |
-| [从单 Agent 到团队协作](docs/course/README.md#module-04) | 09–11 | Agent 分工、多工具适配、审查与接管 |
-| [最小试点与收官](docs/course/README.md#module-05) | 12–13 | 选择试点，把目录、流程和规则带回团队 |
+### 从复杂需求到可审查交付
 
-第一次阅读建议从 [课程总览](00-overview.md) 开始；准备组织试点时，可以先读 [团队最小落地包](12-minimal-playbook.md)，再按具体问题回查对应模块。
+- 03 · [复杂需求拆分：大 PRD 不能直接丢给 Agent](03-requirement-slicing.md)
+- 04 · [有界上下文：不是给 Agent 更多，而是给得更准](04-bounded-context.md)
+- 05 · [阶段化交付：别让 AI 从一句话直接改代码](05-artifact-delivery.md)
+- 06 · [Task 化开发：把大 Diff 拆成可审查的工程任务](06-task-development-review.md)
 
-## 落地实践
+### 从一次成功到持续复用
 
-选择一个中低风险、范围清晰、有回归手段的真实需求，沿着下面的流程完成一次团队试点：
+- 07 · [验证治理：AI 说“测试失败无关”是不够的](07-verification-governance.md)
+- 08 · [资产沉淀：让每次交付反哺下一次任务](08-asset-flywheel.md)
 
-**需求确认 → 选择规则与上下文 → 设计与任务拆分 → 小步实现 → 验证与审查 → 总结归档**
+### 从单 Agent 到团队协作
 
-| 实践入口 | 可以带走什么 |
-| --- | --- |
-| [团队最小落地包](12-minimal-playbook.md) | `.team-agent/` 目录模板、任务状态、PRD、设计、计划与归档结构 |
-| [SPEC 体系](02-spec-system.md) | 团队、领域、业务与工程规则的分层方法 |
-| [验证治理](07-verification-governance.md) | 基线记录、失败分类和交付判断依据 |
-| [协作与接管](11-workspace-collaboration.md) | 任务、产物、代码变更与审查记录的协作方式 |
+- 09 · [Agent 分层：不要让一个万能 Agent 包办所有事](09-adapter-agent-layering.md)
+- 10 · [多工具适配：把共享语义放 Runtime，把工具差异放 Adapter](10-adapter-tooling.md)
+- 11 · [协作面：团队如何审查和接管 Agent 产物](11-workspace-collaboration.md)
 
-把示例中的目录、命令和规则替换成团队现有约定，先让一个需求完整走通，再决定哪些步骤值得自动化。
+### 最小试点与收官
+
+- 12 · [团队最小落地包：从一套目录、一条流程、三类规则开始](12-minimal-playbook.md)
+- 13 · [写在最后：AI Coding 团队化，最后还是工程问题](13-closing.md)
+
+## 把方法带回团队
+
+[团队最小落地包](12-minimal-playbook.md) 汇总了目录模板、任务流程和规则示例。可以先读懂方法，再选择一个范围清晰的需求试用。
 
 ## 交流与许可
 
-欢迎通过 [Issue](https://github.com/DavidDingXu/ai-coding-for-teams/issues) 分享实践问题或反馈勘误，提交改进前请阅读 [贡献指南](CONTRIBUTING.md)。
+欢迎 Star 收藏，按需要回查。问题与勘误请提交 [Issue](https://github.com/DavidDingXu/ai-coding-for-teams/issues)，改进内容请参考[贡献指南](CONTRIBUTING.md)。公众号：**好好用 AI**，可在[阅读站](https://daviddingxu.github.io/ai-coding-for-teams/#community)扫码关注。
 
-- 文章、图示与课程文档：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)，署名、非商业使用、相同方式共享。
-- 示例代码、脚本与网站代码：[PolyForm Noncommercial 1.0.0](LICENSE)。
-
-商业使用需另行授权；具体范围与第三方内容说明见 [许可说明](LICENSING.md)。
+文章与图示采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)，代码采用 [PolyForm Noncommercial 1.0.0](LICENSE)。均限非商业使用，详见[许可说明](LICENSING.md)。

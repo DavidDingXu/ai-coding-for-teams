@@ -1,0 +1,107 @@
+{
+  "00-1": {
+    "file": "00-1.svg",
+    "caption": "一个工程化框架的整体结构",
+    "source_sha256": "d9d802a55a7b6b23b8c08ffa2701ae4415be94ce60ba74ec7c5141fa65c4297b"
+  },
+  "00-2": {
+    "file": "00-2.svg",
+    "caption": "从聊天驱动到产物驱动",
+    "source_sha256": "888dc45af05a400c9a23cd0b6e5a2a8a79d9af0a6757d98d684a15091f1c5fde"
+  },
+  "01-1": {
+    "file": "01-1.svg",
+    "caption": "多工具为什么能共享运行时",
+    "source_sha256": "862121090d2a8edf8eaf784b9f0f327554973233739a6c95016e56aa59753695"
+  },
+  "02-1": {
+    "file": "02-1.svg",
+    "caption": "规则如何进入 Agent 上下文",
+    "source_sha256": "389fdb9597b79954344e8d2358f75edd91c39cec126bb846bb28e09e21863789"
+  },
+  "02-2": {
+    "file": "02-2.svg",
+    "caption": "一条规则从产生到复用的闭环",
+    "source_sha256": "800a1669fc50f6a0b4eaee547891094e202b9d0d24193c721a8e12046eb8e263"
+  },
+  "02-3": {
+    "file": "02-3.svg",
+    "caption": "交付结束后的规则维护流程",
+    "source_sha256": "fd7b79c58be17d8cb9418750c6d9c8441c8ab1e3988f9b557283c4c0ade7fc69"
+  },
+  "03-1": {
+    "file": "03-1.svg",
+    "caption": "从原始需求到稳定 PRD",
+    "source_sha256": "d201249a2af0b0e2a22342f442a631541ebd9db5a765e1c4b4347d2befb9885b"
+  },
+  "03-2": {
+    "file": "03-2.svg",
+    "caption": "切片如何进入上下文选择",
+    "source_sha256": "c2e87eb576fa720155eee21dec61da88fe44dd0b41082a2754aca516a238ff3e"
+  },
+  "04-1": {
+    "file": "04-1.svg",
+    "caption": "案例拆解：上下文构建流水线",
+    "source_sha256": "4613c665e964060f41352494d61820385b246c1f891cd65301715cbb5f322a15"
+  },
+  "05-1": {
+    "file": "05-1.svg",
+    "caption": "案例拆解：阶段化主干",
+    "source_sha256": "60ce3b79f7df3f327904c28a22c36dd6666c2d46b80aee1ffc998954472872c7"
+  },
+  "05-2": {
+    "file": "05-2.svg",
+    "caption": "Develop：按 Task 执行",
+    "source_sha256": "e1db6795f5f1fa2aa6f913a7afe23e8d93eebf2e6c413e9ed1596b385bb8cf1f"
+  },
+  "06-1": {
+    "file": "06-1.svg",
+    "caption": "执行链路",
+    "source_sha256": "853cbde5fbf45bde5e38ef26707715b36aed86ba3727ed5fa6cd4f7b3a5e6363"
+  },
+  "07-1": {
+    "file": "07-1.svg",
+    "caption": "案例拆解：baseline-aware verification",
+    "source_sha256": "977ec239c781ab64b3366ea591443abec842ebd3fcfb627f4eac8992aa480ca5"
+  },
+  "07-2": {
+    "file": "07-2.svg",
+    "caption": "验证和 Review 的关系",
+    "source_sha256": "0c64f4fb0b2e5958f47177c8e632c22f367d6850f7a5e7c126cf97dc0cd325fa"
+  },
+  "08-1": {
+    "file": "08-1.svg",
+    "caption": "案例拆解：交付尾链",
+    "source_sha256": "f0928708b5af3a0eaa0e5ebb292accf17781a06fdc33304006a377aff2e3249a"
+  },
+  "09-1": {
+    "file": "09-1.svg",
+    "caption": "案例拆解：职责分层",
+    "source_sha256": "8057ff32659402ba2775a439f3c2c788ced5b00d7cd09a714d5473c47e695575"
+  },
+  "10-1": {
+    "file": "10-1.svg",
+    "caption": "案例拆解：Runtime 和 Adapter 的关系",
+    "source_sha256": "7f226f4f0925e0d460184a8694aebdd272621d55c9529ae3c3da7b8d22d2dc82"
+  },
+  "11-1": {
+    "file": "11-1.svg",
+    "caption": "案例拆解：Feature Room",
+    "source_sha256": "f1f21d7aa8e689251f93a9ef624fae2cc84cb7175aa7f0ff18f4cf33aeef73ee"
+  },
+  "11-2": {
+    "file": "11-2.svg",
+    "caption": "控制面和执行面分离",
+    "source_sha256": "5354beb8019a18ac97f290ad853d209dfb8221a15bfaec312f9bcb311c5e3861"
+  },
+  "12-1": {
+    "file": "12-1.svg",
+    "caption": "最小闭环",
+    "source_sha256": "b21504bd772d0a74a5abff6c8e15c39aac0c4376c45d63de0226f3b155df2750"
+  },
+  "13-1": {
+    "file": "13-1.svg",
+    "caption": "AI Coding 不是替代工程习惯，而是放大工程习惯",
+    "source_sha256": "ad244b57ef044145d49d35ba94a3ef3dea7ea86523b0a46561cde3969f48dbfc"
+  }
+}
