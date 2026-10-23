@@ -1,10 +1,14 @@
 # AI Coding 团队化实战
 
+<p align="center">
+  <a href="https://daviddingxu.github.io/ai-coding-for-teams/"><img src="docs/assets/readme-cover.svg" alt="AI Coding 团队化实战：14 篇完整文章  /  5 个模块  /  团队落地手册" width="100%"></a>
+</p>
+
+<p align="center"><a href="https://daviddingxu.github.io/ai-coding-for-teams/"><strong>开始阅读 →</strong></a> &nbsp;·&nbsp; <a href="docs/course/README.md"><strong>完整目录</strong></a> &nbsp;·&nbsp; <a href="#落地实践"><strong>落地实践</strong></a></p>
+
+<p align="center"><img src="https://img.shields.io/badge/%E8%AF%BE%E7%A8%8B-%E5%B7%B2%E5%AE%8C%E7%BB%93-2f7d4a?style=flat-square" alt="课程：已完结"> <img src="https://img.shields.io/badge/%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4-%E9%9D%9E%E5%95%86%E4%B8%9A-64776d?style=flat-square" alt="使用范围：非商业"></p>
+
 把个人 AI Coding 经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求出发，建立规则、上下文、任务、验证和协作的共同约定。
-
-**[在线阅读](https://daviddingxu.github.io/ai-coding-for-teams/) · [完整目录](docs/course/README.md) · [落地实践](#落地实践) · [反馈与勘误](https://github.com/DavidDingXu/ai-coding-for-teams/issues)**
-
-**课程已完结 · 14 篇完整文章 · 5 个模块 · 团队最小落地手册**
 
 ## 适合谁学
 
