@@ -1,0 +1,48 @@
+{
+  "brand": "AI Coding for Teams",
+  "headline": [
+    "让一个团队，",
+    "稳定用好 AI。"
+  ],
+  "description": "把个人使用经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求开始，逐步建立规则、上下文、验证与协作。",
+  "pipelineTitle": "从一次需求，到团队工程实践",
+  "readingNote": "规则可维护，交付可审查，经验可复用。",
+  "curriculumNote": "14 篇完整文章，覆盖团队采用 AI Coding 的关键工程问题。",
+  "pipeline": [
+    {
+      "id": "03",
+      "title": "拆清需求与上下文",
+      "caption": "Scope & context"
+    },
+    {
+      "id": "07",
+      "title": "用证据判断交付",
+      "caption": "Verification governance"
+    },
+    {
+      "id": "12",
+      "title": "落地最小团队流程",
+      "caption": "Team playbook"
+    }
+  ],
+  "practice": [
+    {
+      "title": "最小团队落地包",
+      "path": "12-minimal-playbook.md",
+      "description": "用一套目录、一条流程和三类规则，在团队里选择一个真实需求试点。"
+    },
+    {
+      "title": "验证治理",
+      "path": "07-verification-governance.md",
+      "description": "区分历史失败与本次回归，留下基线、执行记录和可审查的判断依据。"
+    }
+  ],
+  "groupNotes": {
+    "01": "建立共享运行时和可维护的规则体系。",
+    "02": "拆需求、控制上下文，按产物和任务推进。",
+    "03": "保留验证依据，让有效经验进入下一次交付。",
+    "04": "划分 Agent 职责，适配工具并支持接管。",
+    "05": "从一个最小试点开始，把方法带回团队。"
+  },
+  "url": "https://daviddingxu.github.io/ai-coding-for-teams/"
+}

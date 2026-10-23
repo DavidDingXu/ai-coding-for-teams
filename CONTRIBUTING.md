@@ -35,3 +35,5 @@ node scripts/check-course.mjs
 ```
 
 它核对全文数量、文章标题、实践入口、图片和仓库内链接。文案或图片修改运行此检查即可；涉及代码行为时，仍需执行相应项目测试。命令适用于 macOS、Windows 和 Linux。
+
+贡献的文章与插图采用 CC BY-NC-SA 4.0，贡献的代码采用 PolyForm Noncommercial 1.0.0；详见 [许可说明](LICENSING.md)。
