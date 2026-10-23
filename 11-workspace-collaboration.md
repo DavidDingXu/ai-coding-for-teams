@@ -290,3 +290,9 @@ Feature Page
 团队 AI Coding 的协作对象应该是产物，而不是聊天。Feature Room、artifact-first review、diff-first review、test evidence 和 review request 共同解决的是：人如何审查、确认、接管和治理 Agent 交付。
 
 下一篇进入团队最小落地包：如果只给 30 天，应该从哪套目录、哪条流程、哪几类规则开始。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 多工具适配：把共享语义放 Runtime，把工具差异放 Adapter](10-adapter-tooling.md) · [团队最小落地包：从一套目录、一条流程、三类规则开始 →](12-minimal-playbook.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

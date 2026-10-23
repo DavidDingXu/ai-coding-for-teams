@@ -305,3 +305,9 @@ summary 写得越像未来任务的索引，资产飞轮越容易转起来。
 Agent 内容不能只靠人工维护。团队要让每次真实交付都成为知识更新来源：规则进 SPEC，案例进 archive，研究进 artifact，验证进 ledger。这样 AI Coding 才会越用越贴近团队，而不是越用越依赖某几个人的经验。
 
 下一篇进入 Agent 分层：为什么不要让一个万能 Agent 同时负责调度、设计、开发、验证和评审。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 验证治理：AI 说“测试失败无关”是不够的](07-verification-governance.md) · [Agent 分层：不要让一个万能 Agent 包办所有事 →](09-adapter-agent-layering.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

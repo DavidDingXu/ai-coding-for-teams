@@ -260,3 +260,7 @@ flowchart TD
 ## 七、结尾
 
 团队 AI Coding 工程化不需要从大平台开始。先建立最小闭环：目录、流程、规则、task、验证、总结、归档。只要这个闭环稳定，后续再补上下文选择、多工具适配、协作工作台和指标化评估，系统就会自然长出来。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 协作面：团队如何审查和接管 Agent 产物](11-workspace-collaboration.md) · [写在最后：AI Coding 团队化，最后还是工程问题 →](13-closing.md)

@@ -599,3 +599,9 @@ non-program 模式下，通常只消费共享的 `prd.jsonl` 和 `code.jsonl`；
 复杂需求拆分的目标不是把流程做重，而是让 Agent 和人都围绕同一组功能边界工作。PRD 先结构化，上下文再选择，计划再拆 task，开发再围绕 diff 和验证证据收敛。
 
 下一篇进入有界上下文：功能切片、SPEC、代码索引和历史案例如何共同组成 Agent 当前阶段真正需要的 working set。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← SPEC 体系：把规则从 Prompt 里拿出来](02-spec-system.md) · [有界上下文：不是给 Agent 更多，而是给得更准 →](04-bounded-context.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

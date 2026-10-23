@@ -462,3 +462,9 @@ SPEC 维护要克制。一次需求结束后，如果没有形成可复用规则
 SPEC 体系的目标不是让文档变多，而是让团队知识从聊天、Prompt 和个人经验中独立出来，成为 Agent 可以稳定消费、团队可以审查、后续可以维护的工程资产。
 
 下一篇进入复杂需求拆分：当 PRD 足够大时，为什么不能直接把整篇需求交给 Agent，而要先变成功能点切片。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 共享运行时：不要让每个应用都重复建设 Agent](01-shared-runtime.md) · [复杂需求拆分：大 PRD 不能直接丢给 Agent →](03-requirement-slicing.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

@@ -264,3 +264,9 @@ working set 只是阅读入口，不是真相源。它应该告诉 Agent “先�
 有界上下文不是限制 Agent，而是让 Agent 从正确的证据开始工作。团队越复杂，越不能依赖模型临场搜索；越要把需求、代码、规则和历史案例变成可选择、可重建、可审查的 working set。
 
 下一篇进入阶段化交付：为什么不能让 AI 从一句话直接改代码，以及 PRD、设计、计划、总结如何变成稳定产物。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 复杂需求拆分：大 PRD 不能直接丢给 Agent](03-requirement-slicing.md) · [阶段化交付：别让 AI 从一句话直接改代码 →](05-artifact-delivery.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

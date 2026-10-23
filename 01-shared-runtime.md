@@ -236,3 +236,9 @@ flowchart LR
 共享运行时是团队 AI Coding 的底座。没有它，Agent 越多，状态越散，经验越难沉淀。先把任务状态、阶段产物、规则、上下文和验证证据放到同一个工程边界里，后续的 SPEC、上下文选择、验证治理和协作面才有承载点。
 
 下一篇进入 SPEC 体系：为什么团队规则不应该继续堆在 Prompt 里，以及如何让规则变成可检索、可审查、可维护的工程资产。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 个人会用 AI Coding，为什么团队还是用不好？](00-overview.md) · [SPEC 体系：把规则从 Prompt 里拿出来 →](02-spec-system.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

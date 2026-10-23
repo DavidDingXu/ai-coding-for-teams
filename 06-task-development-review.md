@@ -292,3 +292,9 @@ Task 化之后，职责更清楚：
 Task 化开发的重点不是把需求拆得越碎越好，而是让每个工程任务都有边界、有证据、有审查入口。团队接受 AI Coding，不是接受一个不可控的大 diff，而是接受一组能被逐个验证和审查的 task。
 
 下一篇进入验证治理：为什么 AI 说“测试失败无关”不够，以及如何用 baseline 和 ledger 建立证据链。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 阶段化交付：别让 AI 从一句话直接改代码](05-artifact-delivery.md) · [验证治理：AI 说“测试失败无关”是不够的 →](07-verification-governance.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

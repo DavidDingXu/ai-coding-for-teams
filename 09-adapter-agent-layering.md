@@ -215,3 +215,9 @@ worker 如果发现证据不足，不应该自己调 explorer 或改计划，而
 Agent 分层的意义不是增加角色数量，而是让团队 AI Coding 有清晰责任边界。一个万能 Agent 看起来简单，实际会把调度、执行、评审和状态混在一起。分层之后，每个环节都能被审查、替换和优化。
 
 下一篇进入多工具适配：如果明天换 AI Coding 工具，团队的规则、任务状态和历史产物还能不能保留。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 资产沉淀：让每次交付反哺下一次任务](08-asset-flywheel.md) · [多工具适配：把共享语义放 Runtime，把工具差异放 Adapter →](10-adapter-tooling.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

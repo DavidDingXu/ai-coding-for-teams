@@ -1,0 +1,161 @@
+{
+  "title": "AI Coding 团队化实战",
+  "repository": "DavidDingXu/ai-coding-for-teams",
+  "articleCount": 14,
+  "chapters": [
+    {
+      "id": "00",
+      "title": "个人会用 AI Coding，为什么团队还是用不好？",
+      "path": "00-overview.md",
+      "group": "01",
+      "groupTitle": "从个人经验到团队系统",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "01",
+      "title": "共享运行时：不要让每个应用都重复建设 Agent",
+      "path": "01-shared-runtime.md",
+      "group": "01",
+      "groupTitle": "从个人经验到团队系统",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "02",
+      "title": "SPEC 体系：把规则从 Prompt 里拿出来",
+      "path": "02-spec-system.md",
+      "group": "01",
+      "groupTitle": "从个人经验到团队系统",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "03",
+      "title": "复杂需求拆分：大 PRD 不能直接丢给 Agent",
+      "path": "03-requirement-slicing.md",
+      "group": "02",
+      "groupTitle": "从复杂需求到可审查交付",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "04",
+      "title": "有界上下文：不是给 Agent 更多，而是给得更准",
+      "path": "04-bounded-context.md",
+      "group": "02",
+      "groupTitle": "从复杂需求到可审查交付",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "05",
+      "title": "阶段化交付：别让 AI 从一句话直接改代码",
+      "path": "05-artifact-delivery.md",
+      "group": "02",
+      "groupTitle": "从复杂需求到可审查交付",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "06",
+      "title": "Task 化开发：把大 Diff 拆成可审查的工程任务",
+      "path": "06-task-development-review.md",
+      "group": "02",
+      "groupTitle": "从复杂需求到可审查交付",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "07",
+      "title": "验证治理：AI 说“测试失败无关”是不够的",
+      "path": "07-verification-governance.md",
+      "group": "03",
+      "groupTitle": "从一次成功到持续复用",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "08",
+      "title": "资产沉淀：让每次交付反哺下一次任务",
+      "path": "08-asset-flywheel.md",
+      "group": "03",
+      "groupTitle": "从一次成功到持续复用",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "09",
+      "title": "Agent 分层：不要让一个万能 Agent 包办所有事",
+      "path": "09-adapter-agent-layering.md",
+      "group": "04",
+      "groupTitle": "从单 Agent 到团队协作",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "10",
+      "title": "多工具适配：把共享语义放 Runtime，把工具差异放 Adapter",
+      "path": "10-adapter-tooling.md",
+      "group": "04",
+      "groupTitle": "从单 Agent 到团队协作",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "11",
+      "title": "协作面：团队如何审查和接管 Agent 产物",
+      "path": "11-workspace-collaboration.md",
+      "group": "04",
+      "groupTitle": "从单 Agent 到团队协作",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "12",
+      "title": "团队最小落地包：从一套目录、一条流程、三类规则开始",
+      "path": "12-minimal-playbook.md",
+      "group": "05",
+      "groupTitle": "最小试点与收官",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    },
+    {
+      "id": "13",
+      "title": "写在最后：AI Coding 团队化，最后还是工程问题",
+      "path": "13-closing.md",
+      "group": "05",
+      "groupTitle": "最小试点与收官",
+      "practice": {
+        "label": "团队最小落地包",
+        "path": "12-minimal-playbook.md"
+      }
+    }
+  ]
+}

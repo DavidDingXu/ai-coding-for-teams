@@ -277,3 +277,9 @@ worker 只负责当前 task，不提交代码、不推进阶段、不修改任�
 阶段化交付不是给 AI Coding 加流程负担，而是让团队能够审查、恢复、验证和沉淀。没有稳定产物，AI Coding 只能是聊天能力；有了稳定产物，AI 才能进入团队研发流程。
 
 下一篇进入 Task 化开发：如何把一个大 diff 拆成能被逐个验证和审查的工程任务。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← 有界上下文：不是给 Agent 更多，而是给得更准](04-bounded-context.md) · [Task 化开发：把大 Diff 拆成可审查的工程任务 →](06-task-development-review.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)

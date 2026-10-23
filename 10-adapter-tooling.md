@@ -247,3 +247,9 @@ adapters/
 多工具适配的目标不是让所有工具长得一样，而是让团队交付语义保持一致。共享状态、规则、上下文和证据放 runtime；命令、hook、插件和 UI 差异放 adapter。这样团队不会被单一工具绑定，也不会因为接入新工具重复建设 Agent。
 
 下一篇进入协作面：当 AI 产出 design、plan、diff 和 evidence 后，团队应该如何审查、接管和治理这些产物。
+
+---
+
+[课程首页](README.md) · [完整目录](docs/course/README.md) · [← Agent 分层：不要让一个万能 Agent 包办所有事](09-adapter-agent-layering.md) · [协作面：团队如何审查和接管 Agent 产物 →](11-workspace-collaboration.md)
+
+动手实践：[团队最小落地包](12-minimal-playbook.md)
