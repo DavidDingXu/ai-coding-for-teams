@@ -40,6 +40,6 @@ node scripts/check-course.mjs
 
 ## 目录与内容维护
 
-根目录保留 14 篇文章及其稳定链接；`docs/course/` 维护完整目录和章节清单；`tools/site/`、`tools/book/` 分别构建阅读站和电子书。
+根目录保留 14 篇文章及其稳定链接；`docs/course/` 维护完整目录和章节清单。
 
-文章顺序和链接以 `docs/course/catalog.json` 为准，根目录 README 展示每篇文章。修改文章后运行课程检查；书稿编排与电子书构建见 [网站与电子书构建说明](docs/BUILD.md)。
+文章顺序和链接以 `docs/course/catalog.json` 为准，根目录 README 展示每篇文章。修改文章后运行课程检查，并在 GitHub 或 Markdown 编辑器中预览。阅读站和电子书由维护者统一更新；贡献正文、图示和代码无需安装官方排版工具。

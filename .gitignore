@@ -1,9 +1,5 @@
 
-tools/site/dist/
-tools/site/__pycache__/
 
-tools/book/.cache/
-tools/book/__pycache__/
 
 # Local publishing outputs and environments
 __pycache__/
@@ -11,3 +7,10 @@ __pycache__/
 .venv/
 *.pdf
 *.epub
+
+# Local publishing tools
+//
+
+# Local publishing tools
+/tools/site/
+/tools/book/
