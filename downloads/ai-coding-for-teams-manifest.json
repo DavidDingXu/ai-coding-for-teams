@@ -1,0 +1,45 @@
+{
+  "title": "AI Coding 团队化实战",
+  "author": "好好用 AI",
+  "version": "1.0.0",
+  "date": "2026-10-24",
+  "repository": "DavidDingXu/ai-coding-for-teams",
+  "git_commit": "738a77f3a573e84ce44cf46aa04cc133abfcd87d",
+  "language": "zh-CN",
+  "sources": {
+    "00-overview.md": "c03749882bbcebeb5f537e73e10fcba16fb3fbf26de26502338c971181ed3feb",
+    "01-shared-runtime.md": "2f392d415c129bf963e546ab936b6bbfc1283c6e89af43f27312de22d4cefec2",
+    "02-spec-system.md": "2ed056ebcd269b8ea6296f65c7c90bd089e3ef14a1e4a8975bf3ef2b79b5b070",
+    "03-requirement-slicing.md": "4beeca374d6f31d8047a4aa470711a6d8573110c8de4574788ba8b263a457e7d",
+    "04-bounded-context.md": "463e4066d7d3c53e5917566f089f00cc0556c3ce3cb9029f7d6781341e8e5836",
+    "05-artifact-delivery.md": "5be6d0078d9721c9166cc34385299838f3b29c60ef6f45a030d940dcc5721a67",
+    "06-task-development-review.md": "878f8c06d36d78dc292d5e67223f7a68a2440c763d78151a4bf3d79e85ff9bd2",
+    "07-verification-governance.md": "4ba042a5ac8b185aa158f5e691e666f3d30709327b23ec5498801bca354a28d6",
+    "08-asset-flywheel.md": "056403bf17582c4010080c9f4a28fbe9c98405115a7d7b7bbb58f401ec6bb98f",
+    "09-adapter-agent-layering.md": "39a95a71e2f12f86646e50f6c4114d311c2c51371277efdf5cb25f8c41d0aefb",
+    "10-adapter-tooling.md": "c02e967a3ab26a329b109fd04ddcdcb9a15c22d590d1b22af6a93ef471d015ba",
+    "11-workspace-collaboration.md": "f8053d1b4ef978aedd3bd08658e974a504163a2dfb7d2dec173d14a0d5ba83c7",
+    "12-minimal-playbook.md": "cf431a1c7909067cc74ef534daaae3d30148dddf94a644aef4c64b0c218ab831",
+    "13-closing.md": "ef0a47854d01c9808da399562c5ab40e8d9f31401bf207cda202ccfbea61bdda",
+    "assets/13-closing-hero.png": "9fc03d59249ed4d444239369d6643298489ebfc56269ca17cb04a99d44ba9714",
+    "docs/course/catalog.json": "b64477930ef49a493d6c4846dcf52cf82d1593b68aa9838a744d8583910201f5",
+    "docs/assets/readme-cover.png": "3eba81a180e06ea2990ae2c91520638680c914106ae4c4009ae7e369b0753d41",
+    "docs/assets/wechat-official-account.jpg": "b42df96fe415c5f1f01494ae7292dbb4c4db232b31543fe5fc791f2f92eaa19c"
+  },
+  "articles": 14,
+  "figures": 22,
+  "tables": 85,
+  "code_blocks": 83,
+  "diagrams": 21,
+  "publishing_sha256": "60b9612c3c3c17d81196a3dc4f17969ac126fc57a8932b947aedfa7bd6555ac3",
+  "content_sha256": "de69ea06b0ade60c0cc83851f2c561c7670cf13727e0401715baf5082b758469",
+  "pdf_pages": 150,
+  "tools": {
+    "pandoc": "pandoc 3.9.0.2",
+    "weasyprint": "68.0"
+  },
+  "files": {
+    "ai-coding-for-teams.pdf": "75d9329b1d54d30ebf30a49e1d9b89780654ab0e13c12ff560dd746cf7b6bc31",
+    "ai-coding-for-teams.epub": "78ad7d5539105dcd882ad96e9519049fe20db52f05d18585915b1dfd056fbca1"
+  }
+}

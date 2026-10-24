@@ -1,0 +1,3 @@
+c58d1f01add7dab654f64c755185e51b5caca3bdd88b73bce97b7a4d43e2f1d3  ai-coding-for-teams-manifest.json
+78ad7d5539105dcd882ad96e9519049fe20db52f05d18585915b1dfd056fbca1  ai-coding-for-teams.epub
+75d9329b1d54d30ebf30a49e1d9b89780654ab0e13c12ff560dd746cf7b6bc31  ai-coding-for-teams.pdf

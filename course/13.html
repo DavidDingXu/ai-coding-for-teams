@@ -1,0 +1,276 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>写在最后：AI Coding 团队化，最后还是工程问题 · AI Coding for Teams</title><meta name="description" content="把个人使用经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求开始，逐步建立规则、上下文、验证与协作。"><meta name="source-sha256" content="bfee37a46cac095cbf116c8a1200af1e00b7f20a3f05e68f1edf6458d2495045">
+<link rel="canonical" href="https://daviddingxu.github.io/ai-coding-for-teams/course/13.html"><link rel="icon" href="../assets/brand.png">
+<script>try{const t=localStorage.getItem('haohai-course-theme');document.documentElement.dataset.theme=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
+<link rel="stylesheet" href="../assets/site.css"><script defer src="../assets/search-index.js"></script><script defer src="../assets/site.js"></script></head><body class="article-page" data-root="../" data-page="13"><a class="skip-link" href="#main-content">跳到正文</a><header class="site-header"><div class="header-inner"><button class="icon-button menu-toggle js-only" type="button" aria-label="打开课程目录" aria-controls="course-sidebar" aria-expanded="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<a class="brand" href="../index.html" aria-label="AI Coding for Teams · 学习站首页"><img src="../assets/brand.png" alt="" width="36" height="36"><span><strong>AI Coding for Teams</strong><small>AI Coding 团队化实战</small></span></a>
+<nav class="header-nav" aria-label="主导航"><a href="../index.html#curriculum">课程目录</a><a href="../index.html#downloads">离线阅读</a><a href="https://github.com/DavidDingXu/ai-coding-for-teams" target="_blank" rel="noopener">GitHub <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></nav>
+<div class="header-controls"><button class="icon-button theme-toggle js-only" type="button" aria-label="切换到深色主题" title="切换到深色主题"><span class="theme-light-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></span><span class="theme-dark-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></span></button><button class="search-trigger js-only" type="button" aria-label="搜索课程"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span>搜索课程</span><kbd>⌘ K</kbd></button></div></div><div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div></header><div class="sidebar-scrim" hidden></div><div class="reader-layout"><aside class="course-sidebar" id="course-sidebar" aria-label="课程目录"><div class="sidebar-heading"><a href="../index.html#curriculum">课程目录</a><button class="icon-button menu-close js-only" type="button" aria-label="关闭课程目录"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><nav aria-label="全部文章"><details class="sidebar-stage"><summary><span class="stage-index">模块 01</span>从个人经验到团队系统</summary><a class="lesson-link" data-lesson="00" href="00.html"><span class="lesson-number">00</span><span>个人会用 AI Coding，为什么团队还是用不好？</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="01" href="01.html"><span class="lesson-number">01</span><span>共享运行时：不要让每个应用都重复建设 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="02" href="02.html"><span class="lesson-number">02</span><span>SPEC 体系：把规则从 Prompt 里拿出来</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 02</span>从复杂需求到可审查交付</summary><a class="lesson-link" data-lesson="03" href="03.html"><span class="lesson-number">03</span><span>复杂需求拆分：大 PRD 不能直接丢给 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="04" href="04.html"><span class="lesson-number">04</span><span>有界上下文：不是给 Agent 更多，而是给得更准</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="05" href="05.html"><span class="lesson-number">05</span><span>阶段化交付：别让 AI 从一句话直接改代码</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="06" href="06.html"><span class="lesson-number">06</span><span>Task 化开发：把大 Diff 拆成可审查的工程任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 03</span>从一次成功到持续复用</summary><a class="lesson-link" data-lesson="07" href="07.html"><span class="lesson-number">07</span><span>验证治理：AI 说“测试失败无关”是不够的</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="08" href="08.html"><span class="lesson-number">08</span><span>资产沉淀：让每次交付反哺下一次任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 04</span>从单 Agent 到团队协作</summary><a class="lesson-link" data-lesson="09" href="09.html"><span class="lesson-number">09</span><span>Agent 分层：不要让一个万能 Agent 包办所有事</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="10" href="10.html"><span class="lesson-number">10</span><span>多工具适配：把共享语义放 Runtime，把工具差异放 Adapter</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="11" href="11.html"><span class="lesson-number">11</span><span>协作面：团队如何审查和接管 Agent 产物</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage" open><summary><span class="stage-index">模块 05</span>最小试点与收官</summary><a class="lesson-link" data-lesson="12" href="12.html"><span class="lesson-number">12</span><span>团队最小落地包：从一套目录、一条流程、三类规则开始</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="13" href="13.html" aria-current="page"><span class="lesson-number">13</span><span>写在最后：AI Coding 团队化，最后还是工程问题</span><span class="lesson-state" aria-hidden="true"></span></a></details></nav><p class="sidebar-note">规则可维护，交付可审查，经验可复用。</p></aside><main class="reader-main" id="main-content"><div class="article-context"><span>最小试点与收官</span><div class="reading-tools js-only"><div class="font-controls" role="group" aria-label="正文字号"><button type="button" data-font="-1" aria-label="减小正文字号">A−</button><span id="font-size-label" aria-live="polite">18</span><button type="button" data-font="1" aria-label="增大正文字号">A+</button></div><button type="button" class="focus-toggle" aria-pressed="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span>专注阅读</span></button></div></div><div class="mobile-context"><nav class="reading-route" aria-label="本篇路线"><details><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一这个系列真正想留下什么">一、这个系列真正想留下什么</a></li>
+<li><a href="#二不要把这个系列读成造平台指南">二、不要把这个系列读成“造平台指南”</a></li>
+<li><a href="#三ai-coding-不是替代工程习惯而是放大工程习惯">三、AI Coding 不是替代工程习惯，而是放大工程习惯</a></li>
+<li><a href="#四一个团队可以怎么继续往下走">四、一个团队可以怎么继续往下走</a></li>
+<li><a href="#五最后应该坚持的几条底线">五、最后应该坚持的几条底线</a></li>
+<li><a href="#六思考与实践">六、思考与实践</a></li>
+<li><a href="#七结尾">七、结尾</a></li>
+</ul>
+</div>
+</details></nav></div><article id="article-body"><h1 id="写在最后ai-coding-团队化最后还是工程问题">写在最后：AI Coding 团队化，最后还是工程问题</h1>
+<p><img alt="AI Coding 团队化工程闭环" src="../assets/content/assets/13-closing-hero.png" width="1672" height="941" decoding="async"></p>
+<p>这个系列写到这里，已经从共享运行时、SPEC、需求拆分、有界上下文、阶段化交付、Task 化开发、验证治理、资产沉淀、Agent 分层、多工具适配、协作面，一直写到了团队最小落地包。</p>
+<p>如果只看目录，容易觉得这套东西有点“重”。AI Coding 不就是让 AI 帮我们写代码吗，为什么要讲这么多状态、规则、产物、上下文、证据和归档？</p>
+<p>原因也很简单：个人用 AI Coding，靠的是个人判断；团队用 AI Coding，靠的是工程边界。一个人知道该给哪些上下文，知道模型哪里容易乱写，知道哪些测试失败是历史问题，也知道代码改到什么程度该停。但这些判断如果一直留在个人脑子里，团队就没有办法复制、审查和接手。</p>
+<p>这个系列想讨论的，其实不是“怎么把 AI 用得更猛”，而是怎么让 AI Coding 进入团队已有的工程秩序。</p>
+<blockquote>
+<p>一句话结论：<strong>AI Coding 团队化的终点，不是做出一个更大的 Agent，而是让需求、上下文、规则、验证和沉淀都变成团队可接手的工程资产。</strong></p>
+</blockquote>
+<h2 id="一这个系列真正想留下什么">一、这个系列真正想留下什么</h2>
+<p>如果要把前面所有文章压缩成一句话，我会这样说：</p>
+<blockquote>
+<p>团队 AI Coding 不是把研发流程交给 AI，而是把 AI 放进一个可审查、可恢复、可验证的研发流程里。</p>
+</blockquote>
+<p>这句话里有几个关键词。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>关键词</th>
+<th>解决什么问题</th>
+<th>对应文章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可审查</td>
+<td>不再只看聊天记录，而是看 PRD、设计、计划、diff 和证据</td>
+<td>阶段化交付、Task 化开发、协作面</td>
+</tr>
+<tr>
+<td>可恢复</td>
+<td>换人、换会话、换工具后，任务还能继续</td>
+<td>共享运行时、状态真相源、多工具适配</td>
+</tr>
+<tr>
+<td>可验证</td>
+<td>AI 不能只说“应该没问题”，必须留下命令、结果和失败分类</td>
+<td>验证治理</td>
+</tr>
+<tr>
+<td>可复用</td>
+<td>每次交付后，经验要进入规则、案例和研究资产</td>
+<td>SPEC、资产沉淀</td>
+</tr>
+<tr>
+<td>可控制</td>
+<td>上下文、任务范围、Agent 职责都有边界</td>
+<td>有界上下文、需求拆分、Agent 分层</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些能力听起来不像“AI 技巧”，更像研发效能、架构治理和工程协作。但这正是团队化落地绕不开的部分。</p>
+<p>工具会继续变，模型也会变强。今天是 IDE 插件，明天是 CLI，后天可能是团队级 Agent 平台。但只要团队想稳定地把 AI 放进研发流程，就绕不开这些问题：</p>
+<ul>
+<li>当前需求到底确认了吗？</li>
+<li>AI 为什么读这些文件，而不是读全仓？</li>
+<li>哪些规则是长期有效的，哪些只是本次任务事实？</li>
+<li>这次代码改动对应哪个 task 和验收标准？</li>
+<li>测试失败是历史失败、本次回归，还是缺少环境？</li>
+<li>交付后有什么经验会进入下一次任务？</li>
+<li>AI 卡住时，人能不能接手？</li>
+</ul>
+<p>能把这些问题回答清楚，团队才算真正开始建设 AI Coding 能力。</p>
+<h2 id="二不要把这个系列读成造平台指南">二、不要把这个系列读成“造平台指南”</h2>
+<p>这个系列反复讲运行时、目录、数据结构、协作面，很容易被误读成：团队必须先造一个平台，才能用好 AI Coding。</p>
+<p>我不这么看。</p>
+<p>大多数团队第一步不需要平台，甚至不需要自动化。第一步应该是把一个真实需求跑清楚：需求怎么确认，规则怎么引用，计划怎么拆，验证怎么留证据，交付后怎么总结。</p>
+<p>真正危险的不是“工具太简陋”，而是下面几种情况：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>看起来像</th>
+<th>实际问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent 能一口气改很多文件</td>
+<td>效率高</td>
+<td>缺少 task 边界，review 很难接住</td>
+</tr>
+<tr>
+<td>Prompt 里写满规则</td>
+<td>很全面</td>
+<td>规则没有来源、生命周期和审查机制</td>
+</tr>
+<tr>
+<td>每个应用都有自己的 Agent</td>
+<td>很贴业务</td>
+<td>通用流程重复建设，行为不一致</td>
+</tr>
+<tr>
+<td>AI 解释测试失败无关</td>
+<td>很懂项目</td>
+<td>没有 baseline 和 ledger，无法审计</td>
+</tr>
+<tr>
+<td>每次都能靠高手救回来</td>
+<td>团队有经验</td>
+<td>经验没有资产化，换人后继续波动</td>
+</tr>
+</tbody>
+</table></div>
+<p>所以这个系列不是劝大家一上来做大系统。相反，它一直在强调最小闭环：先让状态、产物、规则、验证、总结这几件事稳定下来。</p>
+<p>平台可以晚一点，自动化也可以晚一点。边界不能太晚。</p>
+<h2 id="三ai-coding-不是替代工程习惯而是放大工程习惯">三、AI Coding 不是替代工程习惯，而是放大工程习惯</h2>
+<p>AI Coding 很容易暴露一个团队原本就存在的问题。</p>
+<p>如果需求本来就说不清，AI 会把不清楚的部分编成看似完整的方案。</p>
+<p>如果代码边界本来就混乱，AI 会沿着混乱边界继续扩散改动。</p>
+<p>如果测试本来就长期失败，AI 会给出一堆“可能无关”的解释。</p>
+<p>如果规则本来就只存在老员工脑子里，AI 每次都要重新猜。</p>
+<p>这不是 AI 特有的问题。只是 AI 写得快，放大得也快。</p>
+<p>所以团队推进 AI Coding 时，最好不要只问“模型能不能做”。更应该问：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>如果答案不清楚，先补什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求边界清楚吗？</td>
+<td>PRD 结构化和功能切片</td>
+</tr>
+<tr>
+<td>规则在哪里？</td>
+<td>Team SPEC 和 App SPEC</td>
+</tr>
+<tr>
+<td>上下文为什么是这些？</td>
+<td>Working set 和选择证据</td>
+</tr>
+<tr>
+<td>代码改动能拆开审吗？</td>
+<td>task contract 和 allowed paths</td>
+</tr>
+<tr>
+<td>验证结果可信么？</td>
+<td>baseline、green、regression ledger</td>
+</tr>
+<tr>
+<td>做完后能复用吗？</td>
+<td>summary、spec disposition、archive index</td>
+</tr>
+</tbody>
+</table></div>
+<p>AI 不是用来绕过这些工程习惯的。它更适合承担搜索、整理、草拟、局部实现、补测试、生成总结这些执行工作。边界、取舍、验收和风险判断，仍然要由团队负责。</p>
+<p>一个比较稳的分工是：</p>
+<p><img src="../assets/diagrams/13-1.svg" alt="AI Coding 不是替代工程习惯，而是放大工程习惯"></p>
+
+<p>这张图里，AI 很重要，但它不是唯一中心。真正的中心是工程运行时和团队判断。</p>
+<h2 id="四一个团队可以怎么继续往下走">四、一个团队可以怎么继续往下走</h2>
+<p>如果读完这个系列，准备在团队里试一下，我建议不要从“建设完整 AI Coding 平台”开始。可以从一个 30 天小试点开始。</p>
+<h3 id="第一步选一个真实需求">第一步：选一个真实需求</h3>
+<p>不要选太大的重构，也不要选只改文案的小需求。最好是一个中低风险、边界可控、能写出验收标准、能跑验证命令的真实功能点。</p>
+<p>目标不是证明 AI 能写多少代码，而是证明团队能把一次 AI Coding 任务完整接住。</p>
+<h3 id="第二步建最小目录">第二步：建最小目录</h3>
+<p>不用一开始把所有工具都做完。先有这些文件就够：</p>
+<pre><code class="language-text">.team-agent/
+├── current-task
+├── spec/
+│   ├── team/
+│   └── app/
+├── tasks/
+│   └── {taskId}/
+│       ├── task.json
+│       ├── prd.md
+│       ├── design.md
+│       ├── plan.md
+│       ├── plan.tasks.json
+│       ├── summary.md
+│       └── evidence/
+│           └── verification-ledger.jsonl
+└── archive/
+    └── index.jsonl
+</code></pre>
+<p>这套目录不是重点，职责才是重点：状态归状态，产物归产物，规则归规则，证据归证据，历史案例归历史案例。</p>
+<h3 id="第三步先把人工流程跑通">第三步：先把人工流程跑通</h3>
+<p>第一轮可以完全人工驱动：</p>
+<ol>
+<li>需求负责人确认 <code>prd.md</code>。</li>
+<li>架构或负责人审 <code>design.md</code>。</li>
+<li>开发负责人审 <code>plan.md</code> 和 <code>plan.tasks.json</code>。</li>
+<li>每个 task 只允许改约定范围内的文件。</li>
+<li>每次验证写入 <code>verification-ledger.jsonl</code>。</li>
+<li>交付后补 <code>summary.md</code>。</li>
+<li>判断是否更新 SPEC，最后归档案例。</li>
+</ol>
+<p>跑完一轮后，再决定哪些地方值得自动化。通常最先值得做的是模板生成、验证记录、上下文选择和归档索引。不要一开始就把所有流程都做成复杂系统。</p>
+<h3 id="第四步看五个指标">第四步：看五个指标</h3>
+<p>试点结束后，不要只看“节省了多少人天”。更应该看这五个信号：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>问法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接手成本</td>
+<td>换一个人，10 分钟内能知道任务状态和下一步吗？</td>
+</tr>
+<tr>
+<td>计划质量</td>
+<td>task 是否小到可执行、可审查、可验证？</td>
+</tr>
+<tr>
+<td>Diff 收敛</td>
+<td>代码改动是否围绕当前 task，没有顺手扩散？</td>
+</tr>
+<tr>
+<td>验证可信度</td>
+<td>测试失败是否能分类，是否有 baseline 对比？</td>
+</tr>
+<tr>
+<td>资产复用</td>
+<td>下一个相似需求能不能引用这次的规则或案例？</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些指标比“AI 写了多少代码”更接近团队能力。</p>
+<h2 id="五最后应该坚持的几条底线">五、最后应该坚持的几条底线</h2>
+<p>AI Coding 会继续变快，工具也会继续把流程包装得更顺。但团队要留几条底线。</p>
+<p>第一，<strong>需求没确认，不要急着改代码。</strong> 模型越强，越容易把模糊需求补成一个看起来完整的方案。</p>
+<p>第二，<strong>规则不要只放 Prompt。</strong> Prompt 可以承接流程，长期规则要有来源、适用边界和更新机制。</p>
+<p>第三，<strong>上下文不是越多越好。</strong> 给 Agent 的上下文应该能解释为什么被选中，而不是把整个仓库都塞进去。</p>
+<p>第四，<strong>没有验证证据，就不要轻易说完成。</strong> 测试命令、结果、失败分类和阻塞判断要留下来。</p>
+<p>第五，<strong>交付不是合代码就结束。</strong> 总结、规则处置和归档，决定了下一次任务能不能少走弯路。</p>
+<p>第六，<strong>不要让一个万能 Agent 包办所有事。</strong> 控制、设计、执行、评审、总结最好有清楚边界。</p>
+<p>第七，<strong>人不要从流程里消失。</strong> AI 可以承担大量执行工作，但边界、优先级、风险和验收仍然需要人负责。</p>
+<p>这几条不新鲜，甚至有点像工程常识。但 AI Coding 团队化最后拼的，恰恰就是这些常识能不能落到日常流程里。</p>
+<h2 id="六思考与实践">六、思考与实践</h2>
+<ol>
+<li>你们团队现在 AI Coding 最不稳定的环节，是需求、上下文、代码 diff、验证，还是交付沉淀？</li>
+<li>如果只选一个真实需求试点，你会先补 <code>task.json</code>、SPEC、<code>plan.tasks.json</code>，还是 verification ledger？</li>
+<li>你们团队有没有一个地方，可以让新人不看聊天记录，也能接手 AI 正在做的任务？</li>
+</ol>
+<h2 id="七结尾">七、结尾</h2>
+<p>这个系列到这里就收住。</p>
+<p>如果你只记住一件事，我希望是：AI Coding 的团队化，不是把每个人都训练成 Prompt 高手，也不是让一个 Agent 接管研发流程。更可靠的路径，是把个人经验里可复用、可审查、可验证的部分，变成团队共同拥有的工程资产。</p>
+<p>从一个真实需求开始，把状态写清楚，把需求确认好，把规则放到该放的位置，把上下文选准，把计划拆小，把验证证据留下，把交付经验沉淀下来。</p>
+<p>这件事不酷，但有用。</p>
+<p>等这些基础动作稳定之后，团队再谈更强的 Agent、更顺的协作面、更自动化的运行时，才有意义。</p></article><div class="practice-link"><a href="https://github.com/DavidDingXu/ai-coding-for-teams/blob/main/12-minimal-playbook.md" target="_blank" rel="noopener"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg> 团队最小落地包 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></div><nav class="chapter-nav" aria-label="前后篇"><a href="12.html"><span>上一篇 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></span><strong>团队最小落地包：从一套目录、一条流程、三类规则开始</strong></a><span></span></nav><footer class="reader-footer">AI Coding 团队化实战 · <a href="../license.html">非商业使用</a><details class="community-mini"><summary>关注与交流 · 好好用 AI</summary><div class="community-section"><div><p>交流学习中的问题与实践心得。</p><p>代码问题和勘误，欢迎在 <a href="https://github.com/DavidDingXu/ai-coding-for-teams/issues" target="_blank" rel="noopener">GitHub 提交 Issue</a>。</p></div><a class="qr-link" href="../assets/wechat-official-account.jpg" target="_blank" rel="noopener" aria-label="查看好好用 AI 公众号二维码原图"><img src="../assets/wechat-official-account.jpg" alt="好好用 AI 微信公众号二维码" width="130" height="130" loading="lazy"><p class="qr-caption">微信扫码 · 点击查看原图</p></a></div></details></footer></main><aside class="context-sidebar" aria-label="本篇辅助导航"><div class="context-inner"><nav class="reading-route" aria-label="本篇路线"><details open><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一这个系列真正想留下什么">一、这个系列真正想留下什么</a></li>
+<li><a href="#二不要把这个系列读成造平台指南">二、不要把这个系列读成“造平台指南”</a></li>
+<li><a href="#三ai-coding-不是替代工程习惯而是放大工程习惯">三、AI Coding 不是替代工程习惯，而是放大工程习惯</a></li>
+<li><a href="#四一个团队可以怎么继续往下走">四、一个团队可以怎么继续往下走</a></li>
+<li><a href="#五最后应该坚持的几条底线">五、最后应该坚持的几条底线</a></li>
+<li><a href="#六思考与实践">六、思考与实践</a></li>
+<li><a href="#七结尾">七、结尾</a></li>
+</ul>
+</div>
+</details></nav></div></aside></div><dialog class="search-dialog" id="search-dialog" aria-labelledby="search-label"><form method="dialog" class="search-heading"><label for="course-search" id="search-label"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>搜索课程</label><button class="icon-button" aria-label="关闭搜索"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form><input id="course-search" type="search" placeholder="搜索概念、代码或问题…" autocomplete="off" spellcheck="false"><p class="search-status" id="search-status" role="status">搜索全部 14 篇文章。</p><div class="search-results" id="search-results"></div><footer>↑ ↓ 选择结果 <span>Enter 打开 · Esc 关闭</span></footer></dialog>
+<dialog class="image-viewer" id="image-viewer" aria-label="放大配图"><header><span>查看配图</span><div class="image-actions"><button type="button" id="image-size">原尺寸</button><button type="button" id="close-image" autofocus>关闭</button></div></header><div class="image-canvas"><img id="large-image" alt=""></div><footer><p id="image-description"></p><a id="original-image" target="_blank" rel="noopener">打开原图 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></footer></dialog><div class="toast" id="toast" role="status"></div></body></html>

@@ -1,0 +1,765 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>复杂需求拆分：大 PRD 不能直接丢给 Agent · AI Coding for Teams</title><meta name="description" content="把个人使用经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求开始，逐步建立规则、上下文、验证与协作。"><meta name="source-sha256" content="e1b68e2523201b56af9d8bb5afad87f757fec4c1b217d12b1308daffb3ca8f4b">
+<link rel="canonical" href="https://daviddingxu.github.io/ai-coding-for-teams/course/03.html"><link rel="icon" href="../assets/brand.png">
+<script>try{const t=localStorage.getItem('haohai-course-theme');document.documentElement.dataset.theme=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
+<link rel="stylesheet" href="../assets/site.css"><script defer src="../assets/search-index.js"></script><script defer src="../assets/site.js"></script></head><body class="article-page" data-root="../" data-page="03"><a class="skip-link" href="#main-content">跳到正文</a><header class="site-header"><div class="header-inner"><button class="icon-button menu-toggle js-only" type="button" aria-label="打开课程目录" aria-controls="course-sidebar" aria-expanded="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<a class="brand" href="../index.html" aria-label="AI Coding for Teams · 学习站首页"><img src="../assets/brand.png" alt="" width="36" height="36"><span><strong>AI Coding for Teams</strong><small>AI Coding 团队化实战</small></span></a>
+<nav class="header-nav" aria-label="主导航"><a href="../index.html#curriculum">课程目录</a><a href="../index.html#downloads">离线阅读</a><a href="https://github.com/DavidDingXu/ai-coding-for-teams" target="_blank" rel="noopener">GitHub <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></nav>
+<div class="header-controls"><button class="icon-button theme-toggle js-only" type="button" aria-label="切换到深色主题" title="切换到深色主题"><span class="theme-light-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></span><span class="theme-dark-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></span></button><button class="search-trigger js-only" type="button" aria-label="搜索课程"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span>搜索课程</span><kbd>⌘ K</kbd></button></div></div><div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div></header><div class="sidebar-scrim" hidden></div><div class="reader-layout"><aside class="course-sidebar" id="course-sidebar" aria-label="课程目录"><div class="sidebar-heading"><a href="../index.html#curriculum">课程目录</a><button class="icon-button menu-close js-only" type="button" aria-label="关闭课程目录"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><nav aria-label="全部文章"><details class="sidebar-stage"><summary><span class="stage-index">模块 01</span>从个人经验到团队系统</summary><a class="lesson-link" data-lesson="00" href="00.html"><span class="lesson-number">00</span><span>个人会用 AI Coding，为什么团队还是用不好？</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="01" href="01.html"><span class="lesson-number">01</span><span>共享运行时：不要让每个应用都重复建设 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="02" href="02.html"><span class="lesson-number">02</span><span>SPEC 体系：把规则从 Prompt 里拿出来</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage" open><summary><span class="stage-index">模块 02</span>从复杂需求到可审查交付</summary><a class="lesson-link" data-lesson="03" href="03.html" aria-current="page"><span class="lesson-number">03</span><span>复杂需求拆分：大 PRD 不能直接丢给 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="04" href="04.html"><span class="lesson-number">04</span><span>有界上下文：不是给 Agent 更多，而是给得更准</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="05" href="05.html"><span class="lesson-number">05</span><span>阶段化交付：别让 AI 从一句话直接改代码</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="06" href="06.html"><span class="lesson-number">06</span><span>Task 化开发：把大 Diff 拆成可审查的工程任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 03</span>从一次成功到持续复用</summary><a class="lesson-link" data-lesson="07" href="07.html"><span class="lesson-number">07</span><span>验证治理：AI 说“测试失败无关”是不够的</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="08" href="08.html"><span class="lesson-number">08</span><span>资产沉淀：让每次交付反哺下一次任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 04</span>从单 Agent 到团队协作</summary><a class="lesson-link" data-lesson="09" href="09.html"><span class="lesson-number">09</span><span>Agent 分层：不要让一个万能 Agent 包办所有事</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="10" href="10.html"><span class="lesson-number">10</span><span>多工具适配：把共享语义放 Runtime，把工具差异放 Adapter</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="11" href="11.html"><span class="lesson-number">11</span><span>协作面：团队如何审查和接管 Agent 产物</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 05</span>最小试点与收官</summary><a class="lesson-link" data-lesson="12" href="12.html"><span class="lesson-number">12</span><span>团队最小落地包：从一套目录、一条流程、三类规则开始</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="13" href="13.html"><span class="lesson-number">13</span><span>写在最后：AI Coding 团队化，最后还是工程问题</span><span class="lesson-state" aria-hidden="true"></span></a></details></nav><p class="sidebar-note">规则可维护，交付可审查，经验可复用。</p></aside><main class="reader-main" id="main-content"><div class="article-context"><span>从复杂需求到可审查交付</span><div class="reading-tools js-only"><div class="font-controls" role="group" aria-label="正文字号"><button type="button" data-font="-1" aria-label="减小正文字号">A−</button><span id="font-size-label" aria-live="polite">18</span><button type="button" data-font="1" aria-label="增大正文字号">A+</button></div><button type="button" class="focus-toggle" aria-pressed="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span>专注阅读</span></button></div></div><div class="mobile-context"><nav class="reading-route" aria-label="本篇路线"><details><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一一个真实问题大-prd-为什么容易变成大-diff">一、一个真实问题：大 PRD 为什么容易变成大 diff</a></li>
+<li><a href="#二切片前先做-prd-消毒">二、切片前先做 PRD 消毒</a></li>
+<li><a href="#三功能点切片如何生成">三、功能点切片如何生成</a></li>
+<li><a href="#四团队参考做法">四、团队参考做法</a></li>
+<li><a href="#五检查清单">五、检查清单</a></li>
+<li><a href="#六思考与实践">六、思考与实践</a></li>
+<li><a href="#七结尾">七、结尾</a></li>
+</ul>
+</div>
+</details></nav></div><article id="article-body"><h1 id="复杂需求拆分大-prd-不能直接丢给-agent">复杂需求拆分：大 PRD 不能直接丢给 Agent</h1>
+<p>很多团队在 AI Coding 中遇到的不稳定，不是模型完全不懂业务，而是输入太大、边界太混。一个需求文档里可能同时包含新增配置、改接口、补查询、兼容存量、调整权限、增加监控，还涉及多个模块和多类测试。直接把整篇 PRD 丢给 Agent，结果往往是大方案、大计划、大 diff：看起来很完整，但很难评审，也很难确认每个功能点是否真的被实现和验证。</p>
+<p>复杂需求需要先被结构化。这里的“拆分”不是项目管理意义上的排期拆分，也不是一上来就把一个需求拆成多个子项目，而是先把 PRD 变成 Agent 和评审人都能稳定消费的功能点切片。每个切片都应该能回答四个问题：这个功能点要做什么，涉及哪些范围，验收标准是什么，可能关联哪些代码和规则。</p>
+<p>这里还有一个容易被低估的点：功能切片的真相源仍然是 PRD，但切片边界不能只看 PRD 文本。系统里已经维护的领域 SPEC、业务规则、工程约束、代码索引和历史案例，都可以用来校准切片边界。它们不能替 PRD 新增需求，但能帮助团队识别“这个功能属于哪个领域、有哪些既有规则、设计前还有哪些问题必须确认”。</p>
+<p>功能点切片的价值在于让后续阶段围绕同一组边界工作：上下文选择按切片找证据，技术设计按切片说明影响面，开发计划按切片拆 task，验证证据按切片回到验收标准。没有这个结构，AI 很容易在每个阶段重新理解一次需求，最后前后不一致。</p>
+<blockquote>
+<p>一句话结论：<strong>复杂需求交给 AI 之前，先要把需求拆成可验收、可追溯、可进入上下文选择的功能切片。</strong></p>
+</blockquote>
+<h2 id="一一个真实问题大-prd-为什么容易变成大-diff">一、一个真实问题：大 PRD 为什么容易变成大 diff</h2>
+<p>假设 PRD 标题是“新增奖品权益类型支持”。正文里可能包含这些内容：</p>
+<ul>
+<li>新增权益类型枚举。</li>
+<li>配置导入支持新类型。</li>
+<li>创建接口允许选择新类型。</li>
+<li>查询接口展示新类型名称。</li>
+<li>存量类型保持兼容。</li>
+<li>管理端暂时不新增配置入口。</li>
+<li>需要补充埋点和监控。</li>
+<li>需要覆盖退款和履约链路不受影响。</li>
+</ul>
+<p>如果直接把这份 PRD 给 Agent，Agent 可能会按技术层拆：</p>
+<ul>
+<li>改 Controller。</li>
+<li>改 Service。</li>
+<li>改 DAO。</li>
+<li>改枚举。</li>
+<li>补测试。</li>
+</ul>
+<p>这种拆法不是完全错，但它没有回答业务验收问题：新增类型到底是哪几个链路要支持？哪些链路只是回归验证？哪些模块是主改动，哪些只是兼容确认？如果计划阶段不清楚，开发阶段就会变成大范围探索式修改。最后 diff 很大，评审人也很难判断“这个需求是否完整交付”。</p>
+<p>更合理的做法是先按功能点切片：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>功能切片</th>
+<th>目标</th>
+<th>验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feature-01 新权益类型识别</td>
+<td>系统能识别新增权益类型并生成配置</td>
+<td>新类型可创建，非法类型被拦截</td>
+</tr>
+<tr>
+<td>feature-02 查询展示兼容</td>
+<td>查询接口能展示新类型名称，存量类型不变</td>
+<td>新旧类型查询结果符合预期</td>
+</tr>
+<tr>
+<td>feature-03 回归影响确认</td>
+<td>退款、履约、监控链路不受影响</td>
+<td>相关回归测试通过或有 baseline 证据</td>
+</tr>
+</tbody>
+</table></div>
+<p>这样后续无论是上下文选择、设计、计划还是验证，都能围绕功能边界展开，而不是围绕代码文件猜测需求。</p>
+<h3 id="常见误区">常见误区</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>误区</th>
+<th>表现</th>
+<th>后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整篇 PRD 直接进 Agent</td>
+<td>Agent 自己理解、自己拆、自己设计</td>
+<td>每个阶段可能拆法不同，前后不一致</td>
+</tr>
+<tr>
+<td>功能点和执行切片混在一起</td>
+<td>识别出 5 个功能点，就默认开 5 条开发流</td>
+<td>过早复杂化，状态管理和验收成本上升</td>
+</tr>
+<tr>
+<td>只按代码模块拆</td>
+<td>Controller、Service、DAO 各一块</td>
+<td>忽略业务验收边界，容易实现碎片化</td>
+</tr>
+<tr>
+<td>只按 PRD 标题拆</td>
+<td>标题像功能点就直接作为切片</td>
+<td>无法保证验收、代码、规则能对应上</td>
+</tr>
+<tr>
+<td>切片后不进入上下文选择</td>
+<td>文件拆了，但 Agent 仍读全文和全仓</td>
+<td>拆分没有减少复杂度</td>
+</tr>
+</tbody>
+</table></div>
+<p>复杂需求拆分的关键，是先稳定需求结构，再让上下文和计划围绕这个结构工作。</p>
+<h3 id="一个判断prd-大不等于要分片交付">一个判断：PRD 大不等于要分片交付</h3>
+<p>很多团队一看到大 PRD，就想把它拆成多个执行流。这个反应很自然，但不一定正确。PRD 大通常先说明“上下文需要拆”，不一定说明“交付也要拆”。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>情况</th>
+<th>建议处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRD 很长，但属于同一业务目标</td>
+<td>先做 context slice，帮助设计和计划聚焦</td>
+</tr>
+<tr>
+<td>涉及多个业务 owner</td>
+<td>考虑执行切片，但需要负责人确认边界</td>
+</tr>
+<tr>
+<td>涉及多个发版窗口</td>
+<td>考虑 program slice，分阶段验收</td>
+</tr>
+<tr>
+<td>只是包含很多实现细节</td>
+<td>不要拆执行流，把细节放到 design/plan</td>
+</tr>
+<tr>
+<td>横跨多个领域模型且互相依赖</td>
+<td>先生成 requirement contract，再判断是否 program</td>
+</tr>
+</tbody>
+</table></div>
+<p>这条边界很关键：<strong>切片首先是理解和上下文工具，其次才可能成为执行工具。</strong></p>
+<h3 id="设计原则">设计原则</h3>
+<p>第一，<strong>功能切片先是上下文单元，不默认是执行单元</strong>。识别出功能点，只说明上下文可以更聚焦，不代表一定要拆成多个独立开发项目。</p>
+<p>第二，<strong>切片必须保留原始证据</strong>。每个功能点都要能追溯到 PRD 原文片段，避免 Agent 或人把总结当成需求真相。</p>
+<p>第三，<strong>切片要连接验收、规则和代码</strong>。只有标题和摘要不够，后续还要能关联验收项、候选模块、SPEC 和 code refs。</p>
+<p>第四，<strong>切片粒度要面向业务验收，而不是面向代码文件</strong>。一个切片应该对应业务方能理解的一项能力或影响面，而不是一个方法、一个枚举或一个 Mapper。</p>
+<h2 id="二切片前先做-prd-消毒">二、切片前先做 PRD 消毒</h2>
+<p>把原始需求变成稳定 PRD 前，建议先做一次“消毒”。目的不是改写业务方意思，而是把混在一起的信息分层。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>原始内容</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>业务目标、范围、验收</td>
+<td>进入 <code>prd.md</code> 正文</td>
+</tr>
+<tr>
+<td>技术方案建议</td>
+<td>保留在 source 或 design input，不直接变成 PRD 真相</td>
+</tr>
+<tr>
+<td>临时沟通结论</td>
+<td>标注来源和确认状态</td>
+</tr>
+<tr>
+<td>不确定字段</td>
+<td>写成 open question，不让 Agent 猜</td>
+</tr>
+<tr>
+<td>明确非目标</td>
+<td>写入 scope out，防止开发越界</td>
+</tr>
+</tbody>
+</table></div>
+<p>这一步能减少后续常见问题：Agent 把业务方的“可能方案”当成硬要求，把未确认事实当成设计前提。</p>
+<h3 id="从原始需求到稳定-prd">从原始需求到稳定 PRD</h3>
+<p>团队 AI Coding 工程化框架不应该把需求来源直接交给后续 Agent，而是先生成稳定 PRD 产物。</p>
+<p><img src="../assets/diagrams/03-1.svg" alt="从原始需求到稳定 PRD"></p>
+
+<p>典型任务目录如下：</p>
+<pre><code class="language-text">.team-agent/tasks/{taskId}/
+├── prd.md
+├── sources/
+│   ├── requirement.json
+│   ├── wiki.md
+│   └── manual-prd.md
+└── prd/
+    ├── overview.md
+    ├── index.json
+    ├── cross-cutting.md
+    ├── feature-01.md
+    ├── feature-02.md
+    └── feature-03.md
+</code></pre>
+<p>这里有三个层次：</p>
+<ul>
+<li><code>sources/*</code> 保存原始来源，解决追溯问题。</li>
+<li><code>prd.md</code> 是用户确认后的稳定需求产物，解决需求真相源问题。</li>
+<li><code>prd/overview.md</code>、<code>prd/index.json</code>、<code>prd/feature-*.md</code> 是可重建 companion 文件，解决后续上下文选择和功能点拆分问题。</li>
+</ul>
+<p>如果团队暂时没有自动 builder，也可以人工维护这个结构。关键不是自动化程度，而是 PRD 确认后，后续阶段都围绕同一个稳定结构工作。</p>
+<h2 id="三功能点切片如何生成">三、功能点切片如何生成</h2>
+<p>一个通用的 PRD builder 可以按五步生成候选功能切片：</p>
+<ol>
+<li>按 Markdown 二级标题拆分 PRD 顶层章节。</li>
+<li>识别标题中带有 <code>功能</code>、<code>feature</code>、<code>模块</code>、<code>场景</code>、<code>能力</code> 或编号结构的章节。</li>
+<li>为每个章节生成稳定 ID，例如 <code>feature-01</code>。</li>
+<li>从章节正文中提取摘要、验收项和候选模块。</li>
+<li>根据功能数量、PRD 长度、仓库复杂度判断上下文模式和风险信号。</li>
+</ol>
+<p>候选切片生成后，还要用其他工程资产做一次校准。这里要分清每类输入的职责：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>输入</th>
+<th>用来做什么</th>
+<th>不能做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRD</td>
+<td>决定本次要做什么、验收什么</td>
+<td>不能被 SPEC 覆盖</td>
+</tr>
+<tr>
+<td>SPEC</td>
+<td>校准领域边界、业务规则、设计前确认问题</td>
+<td>不能凭空新增需求</td>
+</tr>
+<tr>
+<td>Code Index</td>
+<td>判断候选实现路径、测试入口和风险热点</td>
+<td>不能反推业务目标</td>
+</tr>
+<tr>
+<td>Archive Case</td>
+<td>提醒历史相似风险和验证经验</td>
+<td>不能替代当前验收标准</td>
+</tr>
+</tbody>
+</table></div>
+<p>比较稳的顺序是：先从 PRD 生成候选切片，再用命中的 domain / business SPEC 补充 <code>specRefs</code>、设计前问题和规则约束，再用 code index 推断候选路径，最后用 archive case 提醒历史风险。这样切片既不脱离当前需求，也不会忽略系统已有知识。</p>
+<p>生成的 <code>prd/index.json</code> 类似这样：</p>
+<pre><code class="language-json">{
+  &quot;taskId&quot;: &quot;REQ-123456&quot;,
+  &quot;title&quot;: &quot;新增奖品权益类型&quot;,
+  &quot;mode&quot;: &quot;expanded&quot;,
+  &quot;source&quot;: &quot;wiki&quot;,
+  &quot;overviewPath&quot;: &quot;.team-agent/tasks/REQ-123456/prd/overview.md&quot;,
+  &quot;prdPath&quot;: &quot;.team-agent/tasks/REQ-123456/prd.md&quot;,
+  &quot;crossCuttingPath&quot;: &quot;.team-agent/tasks/REQ-123456/prd/cross-cutting.md&quot;,
+  &quot;features&quot;: [
+    {
+      &quot;id&quot;: &quot;feature-01&quot;,
+      &quot;title&quot;: &quot;功能一：新增权益类型识别&quot;,
+      &quot;path&quot;: &quot;.team-agent/tasks/REQ-123456/prd/feature-01.md&quot;,
+      &quot;summary&quot;: &quot;支持新权益类型识别、配置生成和创建接口校验&quot;,
+      &quot;acceptance&quot;: [&quot;新权益类型可创建&quot;, &quot;非法类型被拦截&quot;],
+      &quot;modules&quot;: [&quot;权益类型&quot;, &quot;奖品配置&quot;],
+      &quot;specRefs&quot;: [&quot;.team-agent/spec/app/business/prize-type.md&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;feature-02&quot;,
+      &quot;title&quot;: &quot;功能二：查询展示兼容&quot;,
+      &quot;path&quot;: &quot;.team-agent/tasks/REQ-123456/prd/feature-02.md&quot;,
+      &quot;summary&quot;: &quot;查询接口展示新类型名称，存量类型展示不变&quot;,
+      &quot;acceptance&quot;: [&quot;新类型可查询展示&quot;, &quot;存量类型返回结构不变&quot;],
+      &quot;modules&quot;: [&quot;查询接口&quot;, &quot;展示映射&quot;],
+      &quot;specRefs&quot;: [&quot;.team-agent/spec/app/business/prize-type.md&quot;]
+    }
+  ]
+}
+</code></pre>
+<p>对应的功能切片文件会保留更适合人阅读的内容：</p>
+<pre><code class="language-md"># 功能切片 feature-01
+
+## 基本信息
+
+- 需求标题: 新增奖品权益类型
+- 功能标题: 功能一：新增权益类型识别
+- 来源: wiki
+
+## 摘要
+
+支持新权益类型识别、配置生成和创建接口校验。
+
+## 相关模块
+
+- 权益类型
+- 奖品配置
+
+## 验收与范围
+
+- 新权益类型可创建
+- 非法类型被拦截
+- 存量权益类型创建行为不变
+
+## 风险信号
+
+- 新枚举可能影响存量配置解析。
+- 创建链路和查询链路使用的类型映射可能不是同一个入口。
+
+## 原始片段
+
+这里保留 PRD 中与该功能点直接相关的原文。
+</code></pre>
+<p>注意，<code>summary</code>、<code>modules</code> 和 <code>specRefs</code> 都是帮助后续选择上下文的结构化信息，不替代原始片段。评审人和 Agent 必须能回到原文确认需求含义。</p>
+<h3 id="用-spec-校准切片边界">用 SPEC 校准切片边界</h3>
+<p>如果团队已经维护了领域或业务 focused SPEC，功能切片就不应该只靠 PRD 标题机械生成。SPEC 可以帮助回答几个问题：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>SPEC 能提供的帮助</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>这个功能属于哪个领域？</td>
+<td>用已有领域模型和业务术语统一命名</td>
+</tr>
+<tr>
+<td>这个功能有哪些长期规则？</td>
+<td>找到创建、查询、展示、兼容、灰度、验证等固定要求</td>
+</tr>
+<tr>
+<td>设计前有什么必须确认？</td>
+<td>从 SPEC 的确认问题里提取待确认事实</td>
+</tr>
+<tr>
+<td>哪些路径只是回归，不是新增需求？</td>
+<td>用历史规则区分主改动和影响确认</td>
+</tr>
+</tbody>
+</table></div>
+<p>比如 PRD 只写了“新增权益类型支持”，SPEC 里已经沉淀过“权益类型变更必须覆盖创建、查询、展示、存量兼容”。这时切片不应该只生成一个“新增类型”大块，而应该至少识别出主功能切片和回归影响切片。反过来，如果 SPEC 里有“查询展示必须回归”，但 PRD 明确说明“本次不涉及查询展示”，那就不能把它写成新增需求，只能作为风险提示或非目标确认问题。</p>
+<p>这就是 PRD 和 SPEC 的边界：PRD 决定需求事实，SPEC 提供领域校准。</p>
+<h3 id="功能切片的命名技巧">功能切片的命名技巧</h3>
+<p>切片命名不要像代码任务，也不要太抽象。推荐格式是：</p>
+<pre><code class="language-text">feature-序号 + 业务能力 + 结果
+</code></pre>
+<p>好的例子：</p>
+<ul>
+<li><code>feature-01 新权益类型识别和创建校验</code></li>
+<li><code>feature-02 查询展示兼容</code></li>
+<li><code>feature-03 退款履约影响确认</code></li>
+</ul>
+<p>不好的例子：</p>
+<ul>
+<li><code>feature-01 改 Service</code></li>
+<li><code>feature-02 补测试</code></li>
+<li><code>feature-03 后端逻辑</code></li>
+</ul>
+<p>好的切片标题应该让业务方、研发、测试和 Agent 都能理解它对应哪一段需求。</p>
+<h3 id="切片粒度怎么判断">切片粒度怎么判断</h3>
+<p>功能切片不是越多越好。粒度太粗，无法减少复杂度；粒度太细，计划和上下文会碎片化。可以用下面几个判断标准。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>判断问题</th>
+<th>如果答案是“是”</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>这个功能点能被业务方独立理解吗？</td>
+<td>是</td>
+<td>可以作为候选切片</td>
+</tr>
+<tr>
+<td>它是否有独立验收标准？</td>
+<td>是</td>
+<td>应该保留为切片</td>
+</tr>
+<tr>
+<td>它是否只对应一个代码文件或方法？</td>
+<td>是</td>
+<td>通常不应单独成切片</td>
+</tr>
+<tr>
+<td>它是否只是另一个功能点的实现细节？</td>
+<td>是</td>
+<td>放入父切片的相关模块或 task</td>
+</tr>
+<tr>
+<td>它是否跨 owner、跨领域或跨发版窗口？</td>
+<td>是</td>
+<td>可能需要升级为执行切片</td>
+</tr>
+<tr>
+<td>它是否只是全局约束，例如日志、监控、兼容？</td>
+<td>是</td>
+<td>放入 <code>cross-cutting.md</code> 或切片风险</td>
+</tr>
+</tbody>
+</table></div>
+<p>经验上，一个中等复杂需求拆 3 到 7 个功能切片比较常见。超过 10 个切片时，要反过来检查 PRD 是否本身包含多个独立需求。</p>
+<h3 id="三种切片层级">三种切片层级</h3>
+<p>复杂需求拆分最容易混淆的地方，是把“功能点切片”直接等同于“分片交付”。这两者不是一回事。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>层级</th>
+<th>产物</th>
+<th>作用</th>
+<th>是否代表独立执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Context Slice</td>
+<td><code>prd/index.json</code>、<code>prd/feature-*.md</code></td>
+<td>帮助 selector 选择 PRD evidence、code refs、SPEC</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Delivery Support</td>
+<td><code>generated/delivery/requirement-contract.json</code>、<code>slice-manifest.json</code></td>
+<td>在 expanded 或 program 场景冻结需求目标、切片、依赖、候选路径</td>
+<td>不一定</td>
+</tr>
+<tr>
+<td>Program Slice</td>
+<td><code>generated/context/prd.slice-{sliceId}.jsonl</code>、<code>code.slice-{sliceId}.jsonl</code>、<code>verification-ledger.slice-{sliceId}.jsonl</code></td>
+<td>用户确认分片交付后，围绕当前切片执行</td>
+<td>是</td>
+</tr>
+</tbody>
+</table></div>
+<p>这个边界很重要。大多数复杂需求只需要 context slice：让设计、计划、上下文选择更聚焦。只有当需求确实跨 owner、跨发版窗口、跨领域，或者需要分段验收时，才应该升级为 program slice。</p>
+<p>建议规则是：<code>large_prd</code>、<code>multi_domain</code>、<code>contextMode=expanded</code> 只触发更强的上下文支持，不自动进入 program mode。只有负责人显式确认分片执行边界后，切片才成为执行边界。</p>
+<h3 id="什么时候必须让人确认切片">什么时候必须让人确认切片</h3>
+<p>不是所有切片都需要人工逐个确认。团队要避免把流程做得太碎。但下面几类情况应该停下来确认：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>信号</th>
+<th>为什么要确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>切片之间有强依赖</td>
+<td>执行顺序会影响设计和发布</td>
+</tr>
+<tr>
+<td>切片跨不同 owner</td>
+<td>需要明确谁验收、谁承担风险</td>
+</tr>
+<tr>
+<td>某个切片包含高风险存量改动</td>
+<td>可能需要独立回滚和灰度</td>
+</tr>
+<tr>
+<td>PRD 中存在互相矛盾的验收项</td>
+<td>不能让 Agent 自己裁剪需求</td>
+</tr>
+<tr>
+<td>自动拆分超过 10 个切片</td>
+<td>可能其实是多个需求</td>
+</tr>
+</tbody>
+</table></div>
+<p>确认的目标不是让用户逐字审切片，而是确认“边界、顺序、验收和非目标”。</p>
+<h3 id="requirement-contract-和-slice-manifest">Requirement Contract 和 Slice Manifest</h3>
+<p>当需求足够复杂，需要冻结更明确的交付支持信息时，可以生成 <code>generated/delivery/*</code>。</p>
+<pre><code class="language-text">.team-agent/tasks/{taskId}/generated/delivery/
+├── requirement-contract.json
+├── slice-manifest.json
+└── manual-slice-input.md
+</code></pre>
+<p><code>requirement-contract.json</code> 用来冻结需求目标和验收边界。它不是替代 PRD，而是给后续设计、计划、开发提供机器可读的需求契约。</p>
+<pre><code class="language-json">{
+  &quot;taskId&quot;: &quot;REQ-123456&quot;,
+  &quot;title&quot;: &quot;新增奖品权益类型&quot;,
+  &quot;goals&quot;: [
+    {
+      &quot;id&quot;: &quot;REQ-001&quot;,
+      &quot;featureId&quot;: &quot;feature-01&quot;,
+      &quot;statement&quot;: &quot;系统支持新增权益类型识别和配置生成&quot;,
+      &quot;acceptance&quot;: [&quot;新权益类型可创建&quot;, &quot;非法类型被拦截&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;REQ-002&quot;,
+      &quot;featureId&quot;: &quot;feature-02&quot;,
+      &quot;statement&quot;: &quot;查询接口展示新类型名称且存量类型不变&quot;,
+      &quot;acceptance&quot;: [&quot;新类型可查询展示&quot;, &quot;存量类型返回结构不变&quot;]
+    }
+  ],
+  &quot;crossCutting&quot;: [
+    &quot;需要确认存量类型兼容策略&quot;,
+    &quot;需要补充查询和展示回归验证&quot;
+  ]
+}
+</code></pre>
+<p><code>slice-manifest.json</code> 用来描述切片、依赖、候选规则和候选代码路径。它通常不是只从 PRD 生成，而是在 PRD 候选切片基础上合并已选择的 SPEC 和代码索引信号。</p>
+<pre><code class="language-json">{
+  &quot;taskId&quot;: &quot;REQ-123456&quot;,
+  &quot;mode&quot;: &quot;context&quot;,
+  &quot;source&quot;: {
+    &quot;mode&quot;: &quot;auto&quot;,
+    &quot;inputs&quot;: [&quot;prd&quot;]
+  },
+  &quot;calibrationSignals&quot;: [&quot;selected_specs&quot;, &quot;code_index&quot;],
+  &quot;slices&quot;: [
+    {
+      &quot;id&quot;: &quot;feature-01&quot;,
+      &quot;title&quot;: &quot;功能一：新增权益类型识别&quot;,
+      &quot;objective&quot;: &quot;支持新权益类型识别、配置生成和创建接口校验&quot;,
+      &quot;requirementRefs&quot;: [&quot;REQ-001&quot;],
+      &quot;specRefs&quot;: [&quot;.team-agent/spec/app/business/prize-type.md&quot;],
+      &quot;runtimeRuleRefs&quot;: [&quot;.team-agent/spec/app/business/prize-type.md#Runtime Rules&quot;],
+      &quot;dependsOn&quot;: [],
+      &quot;riskSignals&quot;: [&quot;large_prd&quot;],
+      &quot;candidateDomains&quot;: [&quot;权益类型&quot;],
+      &quot;candidatePaths&quot;: [&quot;src/main/java/...&quot;]
+    }
+  ]
+}
+</code></pre>
+<p>这两个文件的作用是让后续阶段有稳定边界：</p>
+<ul>
+<li>designer 可以围绕切片目标和跨切面约束写设计。</li>
+<li>planner 可以把任务拆到更清晰的功能边界。</li>
+<li>context selector 可以选择相关 SPEC 和 code refs。</li>
+<li>worker 在 program mode 下可以只消费当前 slice 的 working set。</li>
+</ul>
+<h3 id="切片如何进入上下文选择">切片如何进入上下文选择</h3>
+<p>功能切片只有进入上下文选择，才真正降低复杂度。</p>
+<p><img src="../assets/diagrams/03-2.svg" alt="切片如何进入上下文选择"></p>
+
+<p>selector input 可以包含：</p>
+<ul>
+<li>当前任务摘要。</li>
+<li><code>prd/index.json</code> 中的 features。</li>
+<li><code>slice-manifest.json</code> 中的 slices。</li>
+<li>SPEC route cards 和 business Spec candidates。</li>
+<li>code-index cards。</li>
+<li>archive case cards。</li>
+<li>预算、阶段、Agent、fingerprint。</li>
+</ul>
+<p>输出可以写入：</p>
+<pre><code class="language-text">.team-agent/cache/tasks/{taskId}/context-selection.json
+</code></pre>
+<p>典型字段如下：</p>
+<pre><code class="language-json">{
+  &quot;selectedSlices&quot;: [
+    {
+      &quot;id&quot;: &quot;feature-01&quot;,
+      &quot;reason&quot;: &quot;当前需求主要涉及新增权益类型识别和配置生成&quot;
+    }
+  ],
+  &quot;selectedCodeRefs&quot;: [
+    {
+      &quot;path&quot;: &quot;src/main/java/com/example/prize/PrizeTypeService.java&quot;,
+      &quot;reason&quot;: &quot;处理奖品类型识别和配置生成&quot;
+    }
+  ],
+  &quot;selectedSpecRefs&quot;: [
+    &quot;.team-agent/spec/app/business/prize-type.md&quot;
+  ]
+}
+</code></pre>
+<p>之后 runtime 会把这些选择转成阶段 working set，例如：</p>
+<pre><code class="language-text">.team-agent/tasks/{taskId}/generated/context/
+├── prd.jsonl
+├── code.jsonl
+├── prd.slice-feature-01.jsonl
+└── code.slice-feature-01.jsonl
+</code></pre>
+<p>non-program 模式下，通常只消费共享的 <code>prd.jsonl</code> 和 <code>code.jsonl</code>；program mode 下，当前切片才会使用 slice 专属 working set。</p>
+<h3 id="切片如何影响设计和计划">切片如何影响设计和计划</h3>
+<p>切片不能只停留在 <code>prd/</code> 目录里，它要继续进入 <code>design.md</code> 和 <code>plan.md</code>。</p>
+<p><code>design.md</code> 可以按功能切片说明影响面：</p>
+<pre><code class="language-md">## 功能切片设计
+
+### feature-01 新权益类型识别
+
+- 目标：支持新权益类型识别、配置生成和创建接口校验。
+- 影响模块：PrizeTypeService、PrizeConfigParser、CreatePrizeRequestValidator。
+- 兼容策略：存量类型映射保持不变，新增类型走独立枚举分支。
+- 风险：配置解析和查询展示使用不同映射入口，需要统一回归。
+
+### feature-02 查询展示兼容
+
+- 目标：查询接口展示新类型名称，存量类型展示不变。
+- 影响模块：PrizeQueryService、PrizeTypeDisplayMapper。
+- 验证：新增类型查询测试，存量类型查询回归测试。
+</code></pre>
+<p><code>plan.tasks.json</code> 里每个 task 要能回到功能切片：</p>
+<pre><code class="language-json">{
+  &quot;tasks&quot;: [
+    {
+      &quot;id&quot;: &quot;TASK-001&quot;,
+      &quot;featureId&quot;: &quot;feature-01&quot;,
+      &quot;title&quot;: &quot;支持新权益类型识别和创建校验&quot;,
+      &quot;allowedPaths&quot;: [
+        &quot;src/main/java/com/example/prize/PrizeTypeService.java&quot;,
+        &quot;src/test/java/com/example/prize/PrizeTypeServiceTest.java&quot;
+      ],
+      &quot;verificationCommands&quot;: [
+        &quot;mvn -Dtest=PrizeTypeServiceTest test&quot;
+      ],
+      &quot;acceptanceCriteria&quot;: [
+        &quot;新权益类型可创建&quot;,
+        &quot;非法类型被拦截&quot;,
+        &quot;存量类型创建行为不变&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>这样做的好处是，后续代码 diff、测试证据和验收标准能形成闭环。如果 task 只写“修改 Service 逻辑”，评审人很难知道它服务于哪个需求目标。</p>
+<h2 id="四团队参考做法">四、团队参考做法</h2>
+<p>团队刚开始不需要完整实现 builder、selector 和 program mode，可以先做一个简化版需求切片机制。</p>
+<p>第一阶段，先让 PRD 结构化：</p>
+<pre><code class="language-text">.team-agent/tasks/{taskId}/
+├── prd.md
+└── prd/
+    ├── overview.md
+    ├── index.json
+    └── feature-01.md
+</code></pre>
+<p><code>prd/index.json</code> 只需要包含：</p>
+<pre><code class="language-json">{
+  &quot;taskId&quot;: &quot;T-001&quot;,
+  &quot;title&quot;: &quot;需求标题&quot;,
+  &quot;features&quot;: [
+    {
+      &quot;id&quot;: &quot;feature-01&quot;,
+      &quot;title&quot;: &quot;功能点标题&quot;,
+      &quot;summary&quot;: &quot;功能点摘要&quot;,
+      &quot;acceptance&quot;: [&quot;验收项 1&quot;, &quot;验收项 2&quot;],
+      &quot;modules&quot;: [&quot;候选模块&quot;],
+      &quot;specRefs&quot;: [&quot;.team-agent/spec/app/business/example.md&quot;],
+      &quot;sourcePath&quot;: &quot;.team-agent/tasks/T-001/prd/feature-01.md&quot;
+    }
+  ]
+}
+</code></pre>
+<p>第二阶段，把切片接入设计和计划：</p>
+<ul>
+<li><code>design.md</code> 中按功能点说明影响范围。</li>
+<li><code>plan.md</code> 中按功能点拆 task。</li>
+<li><code>plan.tasks.json</code> 中每个 task 标注相关 <code>featureId</code>、<code>requirementRefs</code> 和 <code>specRefs</code>。</li>
+<li>验证命令和验收标准要能回到 feature。</li>
+</ul>
+<p>第三阶段，再考虑 program mode：</p>
+<ul>
+<li>只有跨 owner、跨领域、跨发版窗口的需求才升级。</li>
+<li>每个执行切片要有独立验收和验证证据。</li>
+<li>切片之间依赖要显式记录。</li>
+<li>不要因为 PRD 大就自动开多条执行流。</li>
+</ul>
+<h3 id="常见坑">常见坑</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>坑</th>
+<th>表现</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>按代码层拆切片</td>
+<td>Controller / Service / DAO 各一片</td>
+<td>切片按业务能力拆，代码层放在 candidatePaths</td>
+</tr>
+<tr>
+<td>切片没有原文</td>
+<td>只有模型总结</td>
+<td>每个切片保留原始 PRD 片段</td>
+</tr>
+<tr>
+<td>切片没有验收</td>
+<td>只有标题和摘要</td>
+<td>没有验收标准的切片不能进入计划</td>
+</tr>
+<tr>
+<td>切片不看已有 SPEC</td>
+<td>PRD 标题怎么写就怎么拆</td>
+<td>用 SPEC 校准领域边界和设计前确认问题</td>
+</tr>
+<tr>
+<td>切片过细</td>
+<td>一个枚举一个切片，一个字段一个切片</td>
+<td>合并到业务功能点，细节放 task</td>
+</tr>
+<tr>
+<td>切片过粗</td>
+<td>一个切片包含 8 个业务目标</td>
+<td>拆成多个 feature，或确认是否多个需求</td>
+</tr>
+<tr>
+<td>自动升级执行流</td>
+<td>看到多切片就开多条开发流</td>
+<td>默认只做上下文切片，执行切片需显式确认</td>
+</tr>
+<tr>
+<td>切片不进计划</td>
+<td><code>prd/feature-*.md</code> 写了，但 task 不引用</td>
+<td><code>plan.tasks.json</code> 增加 <code>featureId</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="切片质量检查">切片质量检查</h3>
+<p>一个好的功能切片至少要满足：</p>
+<ul>
+<li>有稳定 ID，例如 <code>feature-01</code>。</li>
+<li>有清晰标题和摘要。</li>
+<li>有原始 PRD 片段。</li>
+<li>有验收项。</li>
+<li>有候选业务模块或领域。</li>
+<li>能关联相关 SPEC。</li>
+<li>能说明这些 SPEC 是规则校准，不是新增需求来源。</li>
+<li>能帮助选择代码上下文。</li>
+<li>能在计划中映射到 task。</li>
+</ul>
+<p>切片不是越细越好。过细会导致上下文碎片化，评审人也难以把握整体需求。经验上，一个切片应该对应一个可以被业务方理解的功能点，而不是一个技术方法或一个代码文件。</p>
+<h2 id="五检查清单">五、检查清单</h2>
+<p>可以用下面的问题检查复杂需求拆分是否有效：</p>
+<ul>
+<li>大 PRD 是否先生成了稳定 <code>prd.md</code>？</li>
+<li>每个功能点是否保留原始需求片段？</li>
+<li>切片是否有验收项，而不只是标题？</li>
+<li>是否区分 context slice 和 program slice？</li>
+<li>是否避免因为 <code>large_prd</code> 就自动进入多执行流？</li>
+<li>设计和计划是否引用了功能切片？</li>
+<li>上下文选择是否使用了 selectedSlices？</li>
+<li>每个执行 task 是否能回到具体功能点、需求契约、SPEC 和验收标准？</li>
+</ul>
+<p>如果这些问题没有答案，先不要急着让 Agent 开发。先把需求结构稳定下来，再进入设计、计划和代码修改。</p>
+<h2 id="六思考与实践">六、思考与实践</h2>
+<ol>
+<li>选一个你最近做过的大需求，能不能拆成 3-7 个业务功能切片？每个切片是否都有独立验收标准？</li>
+<li>你们团队现在更常按业务功能拆需求，还是按 Controller / Service / DAO 这类代码层拆任务？</li>
+<li>哪类需求在你们团队里应该升级为 program slice？是跨 owner、跨领域、跨发版窗口，还是其他原因？</li>
+</ol>
+<h2 id="七结尾">七、结尾</h2>
+<p>复杂需求拆分的目标不是把流程做重，而是让 Agent 和人都围绕同一组功能边界工作。PRD 先结构化，上下文再选择，计划再拆 task，开发再围绕 diff 和验证证据收敛。</p>
+<p>下一篇进入有界上下文：功能切片、SPEC、代码索引和历史案例如何共同组成 Agent 当前阶段真正需要的 working set。</p></article><div class="practice-link"><a href="https://github.com/DavidDingXu/ai-coding-for-teams/blob/main/12-minimal-playbook.md" target="_blank" rel="noopener"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg> 团队最小落地包 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></div><nav class="chapter-nav" aria-label="前后篇"><a href="02.html"><span>上一篇 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></span><strong>SPEC 体系：把规则从 Prompt 里拿出来</strong></a><a href="04.html"><span>下一篇 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>有界上下文：不是给 Agent 更多，而是给得更准</strong></a></nav><footer class="reader-footer">AI Coding 团队化实战 · <a href="../license.html">非商业使用</a><details class="community-mini"><summary>关注与交流 · 好好用 AI</summary><div class="community-section"><div><p>交流学习中的问题与实践心得。</p><p>代码问题和勘误，欢迎在 <a href="https://github.com/DavidDingXu/ai-coding-for-teams/issues" target="_blank" rel="noopener">GitHub 提交 Issue</a>。</p></div><a class="qr-link" href="../assets/wechat-official-account.jpg" target="_blank" rel="noopener" aria-label="查看好好用 AI 公众号二维码原图"><img src="../assets/wechat-official-account.jpg" alt="好好用 AI 微信公众号二维码" width="130" height="130" loading="lazy"><p class="qr-caption">微信扫码 · 点击查看原图</p></a></div></details></footer></main><aside class="context-sidebar" aria-label="本篇辅助导航"><div class="context-inner"><nav class="reading-route" aria-label="本篇路线"><details open><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一一个真实问题大-prd-为什么容易变成大-diff">一、一个真实问题：大 PRD 为什么容易变成大 diff</a></li>
+<li><a href="#二切片前先做-prd-消毒">二、切片前先做 PRD 消毒</a></li>
+<li><a href="#三功能点切片如何生成">三、功能点切片如何生成</a></li>
+<li><a href="#四团队参考做法">四、团队参考做法</a></li>
+<li><a href="#五检查清单">五、检查清单</a></li>
+<li><a href="#六思考与实践">六、思考与实践</a></li>
+<li><a href="#七结尾">七、结尾</a></li>
+</ul>
+</div>
+</details></nav></div></aside></div><dialog class="search-dialog" id="search-dialog" aria-labelledby="search-label"><form method="dialog" class="search-heading"><label for="course-search" id="search-label"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>搜索课程</label><button class="icon-button" aria-label="关闭搜索"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form><input id="course-search" type="search" placeholder="搜索概念、代码或问题…" autocomplete="off" spellcheck="false"><p class="search-status" id="search-status" role="status">搜索全部 14 篇文章。</p><div class="search-results" id="search-results"></div><footer>↑ ↓ 选择结果 <span>Enter 打开 · Esc 关闭</span></footer></dialog>
+<dialog class="image-viewer" id="image-viewer" aria-label="放大配图"><header><span>查看配图</span><div class="image-actions"><button type="button" id="image-size">原尺寸</button><button type="button" id="close-image" autofocus>关闭</button></div></header><div class="image-canvas"><img id="large-image" alt=""></div><footer><p id="image-description"></p><a id="original-image" target="_blank" rel="noopener">打开原图 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></footer></dialog><div class="toast" id="toast" role="status"></div></body></html>

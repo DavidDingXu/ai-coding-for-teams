@@ -1,0 +1,475 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>个人会用 AI Coding，为什么团队还是用不好？ · AI Coding for Teams</title><meta name="description" content="把个人使用经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求开始，逐步建立规则、上下文、验证与协作。"><meta name="source-sha256" content="f3267e05778cba8d43886083e61badb93e46da64f13caa4c0bc3bc6a2036ab1e">
+<link rel="canonical" href="https://daviddingxu.github.io/ai-coding-for-teams/course/00.html"><link rel="icon" href="../assets/brand.png">
+<script>try{const t=localStorage.getItem('haohai-course-theme');document.documentElement.dataset.theme=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
+<link rel="stylesheet" href="../assets/site.css"><script defer src="../assets/search-index.js"></script><script defer src="../assets/site.js"></script></head><body class="article-page" data-root="../" data-page="00"><a class="skip-link" href="#main-content">跳到正文</a><header class="site-header"><div class="header-inner"><button class="icon-button menu-toggle js-only" type="button" aria-label="打开课程目录" aria-controls="course-sidebar" aria-expanded="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<a class="brand" href="../index.html" aria-label="AI Coding for Teams · 学习站首页"><img src="../assets/brand.png" alt="" width="36" height="36"><span><strong>AI Coding for Teams</strong><small>AI Coding 团队化实战</small></span></a>
+<nav class="header-nav" aria-label="主导航"><a href="../index.html#curriculum">课程目录</a><a href="../index.html#downloads">离线阅读</a><a href="https://github.com/DavidDingXu/ai-coding-for-teams" target="_blank" rel="noopener">GitHub <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></nav>
+<div class="header-controls"><button class="icon-button theme-toggle js-only" type="button" aria-label="切换到深色主题" title="切换到深色主题"><span class="theme-light-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></span><span class="theme-dark-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></span></button><button class="search-trigger js-only" type="button" aria-label="搜索课程"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span>搜索课程</span><kbd>⌘ K</kbd></button></div></div><div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div></header><div class="sidebar-scrim" hidden></div><div class="reader-layout"><aside class="course-sidebar" id="course-sidebar" aria-label="课程目录"><div class="sidebar-heading"><a href="../index.html#curriculum">课程目录</a><button class="icon-button menu-close js-only" type="button" aria-label="关闭课程目录"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><nav aria-label="全部文章"><details class="sidebar-stage" open><summary><span class="stage-index">模块 01</span>从个人经验到团队系统</summary><a class="lesson-link" data-lesson="00" href="00.html" aria-current="page"><span class="lesson-number">00</span><span>个人会用 AI Coding，为什么团队还是用不好？</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="01" href="01.html"><span class="lesson-number">01</span><span>共享运行时：不要让每个应用都重复建设 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="02" href="02.html"><span class="lesson-number">02</span><span>SPEC 体系：把规则从 Prompt 里拿出来</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 02</span>从复杂需求到可审查交付</summary><a class="lesson-link" data-lesson="03" href="03.html"><span class="lesson-number">03</span><span>复杂需求拆分：大 PRD 不能直接丢给 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="04" href="04.html"><span class="lesson-number">04</span><span>有界上下文：不是给 Agent 更多，而是给得更准</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="05" href="05.html"><span class="lesson-number">05</span><span>阶段化交付：别让 AI 从一句话直接改代码</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="06" href="06.html"><span class="lesson-number">06</span><span>Task 化开发：把大 Diff 拆成可审查的工程任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 03</span>从一次成功到持续复用</summary><a class="lesson-link" data-lesson="07" href="07.html"><span class="lesson-number">07</span><span>验证治理：AI 说“测试失败无关”是不够的</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="08" href="08.html"><span class="lesson-number">08</span><span>资产沉淀：让每次交付反哺下一次任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 04</span>从单 Agent 到团队协作</summary><a class="lesson-link" data-lesson="09" href="09.html"><span class="lesson-number">09</span><span>Agent 分层：不要让一个万能 Agent 包办所有事</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="10" href="10.html"><span class="lesson-number">10</span><span>多工具适配：把共享语义放 Runtime，把工具差异放 Adapter</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="11" href="11.html"><span class="lesson-number">11</span><span>协作面：团队如何审查和接管 Agent 产物</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 05</span>最小试点与收官</summary><a class="lesson-link" data-lesson="12" href="12.html"><span class="lesson-number">12</span><span>团队最小落地包：从一套目录、一条流程、三类规则开始</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="13" href="13.html"><span class="lesson-number">13</span><span>写在最后：AI Coding 团队化，最后还是工程问题</span><span class="lesson-state" aria-hidden="true"></span></a></details></nav><p class="sidebar-note">规则可维护，交付可审查，经验可复用。</p></aside><main class="reader-main" id="main-content"><div class="article-context"><span>从个人经验到团队系统</span><div class="reading-tools js-only"><div class="font-controls" role="group" aria-label="正文字号"><button type="button" data-font="-1" aria-label="减小正文字号">A−</button><span id="font-size-label" aria-live="polite">18</span><button type="button" data-font="1" aria-label="增大正文字号">A+</button></div><button type="button" class="focus-toggle" aria-pressed="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span>专注阅读</span></button></div></div><div class="mobile-context"><nav class="reading-route" aria-label="本篇路线"><details><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一一个典型场景个人能跑通团队接不住">一、一个典型场景：个人能跑通，团队接不住</a></li>
+<li><a href="#二团队-ai-coding-要补的八类能力">二、团队 AI Coding 要补的八类能力</a></li>
+<li><a href="#三一个工程化框架的整体结构">三、一个工程化框架的整体结构</a></li>
+<li><a href="#四状态真相源任务不能依赖聊天记忆">四、状态真相源：任务不能依赖聊天记忆</a></li>
+<li><a href="#五低配版也能先跑起来">五、低配版也能先跑起来</a></li>
+<li><a href="#六自查清单">六、自查清单</a></li>
+<li><a href="#七思考与实践">七、思考与实践</a></li>
+<li><a href="#八结尾">八、结尾</a></li>
+</ul>
+</div>
+</details></nav></div><article id="article-body"><h1 id="个人会用-ai-coding为什么团队还是用不好">个人会用 AI Coding，为什么团队还是用不好？</h1>
+<p>很多团队第一次看到 AI Coding 的效果，往往来自某个研发同学的个人实践：他把需求贴给模型，让模型帮忙读代码、生成实现、补测试，再自己做几轮修正，最后确实比过去快。这个过程很容易让团队产生一个判断：既然个人已经能提效，那接下来只要多推广工具、多沉淀 Prompt、多做几个 Agent，团队效率自然会起来。</p>
+<p>真实情况通常没这么顺。个人会用 AI Coding，依赖的是个人对业务、代码、测试和风险的综合判断。这个人知道哪些上下文该给，知道模型哪里容易胡说，也知道测试失败是不是历史问题。换一个人、换一个应用、换一个需求规模，结果就会波动。团队真正要解决的，不是“让模型更聪明一点”，而是把个人临场判断里可工程化的部分固定下来。</p>
+<p>团队 AI Coding 的关键转折点，是从“会用工具”走向“有工程系统承接工具”。需求从哪里来、PRD 是否确认、规则放在哪里、上下文如何选择、设计和计划怎么审查、验证证据如何记录、历史经验怎么沉淀，这些问题如果都靠人临场补救，AI Coding 就只能停留在个人经验层。</p>
+<p>这个系列把这类系统称为 <strong>团队 AI Coding 工程化框架</strong>。它不是某个具体产品名，而是一组工程边界：共享运行时、任务状态、稳定产物、规则体系、有界上下文、复杂需求拆分、验证证据、资产沉淀和协作审查。下面用一个通用的实践样本来拆解这些边界如何落到目录、命令、产物和数据结构里。</p>
+<blockquote>
+<p>一句话结论：<strong>AI Coding 的团队化问题，不是 Prompt 问题，而是工程系统问题。</strong></p>
+</blockquote>
+<h2 id="一一个典型场景个人能跑通团队接不住">一、一个典型场景：个人能跑通，团队接不住</h2>
+<p>假设一个业务团队要做“新增奖品权益类型”。熟悉该应用的研发 A 用 AI Coding 很顺：</p>
+<ul>
+<li>他知道 PRD 里“权益类型”和代码里的 <code>PrizeType</code> 不是完全一一对应。</li>
+<li>他知道新增类型不能只改枚举，还要看配置生成、查询展示、回滚兼容。</li>
+<li>他知道历史测试里有一个用例长期失败，本次不用被它阻塞。</li>
+<li>他知道哪个 Service 是主入口，哪些 Controller 只是薄封装。</li>
+</ul>
+<p>所以他能把上下文裁剪得很准，模型输出也容易被他修正。但如果把同一个需求交给研发 B，或者交给另一个应用团队，问题就会出现：</p>
+<ul>
+<li>B 不知道要补哪些业务规则，只能把整篇 PRD 和一堆代码塞给模型。</li>
+<li>模型生成的方案看起来完整，但没有说明哪些存量行为不能变。</li>
+<li>计划按 Controller、Service、DAO 拆任务，看起来很工程化，但没有对应业务验收。</li>
+<li>测试失败后，模型说“可能是历史失败”，但没有改前 baseline 证据。</li>
+<li>需求完成后，关键经验只留在聊天记录和 PR 评论里，下次还要重新解释。</li>
+</ul>
+<p>这不是某个人不会用 AI，而是团队缺少一个承接层。个人经验里有很多可以系统化的东西：规则可以结构化，需求可以切片，上下文可以选择，验证可以留证据，交付可以归档。团队 AI Coding 的建设重点，就是把这些东西从个人脑子里拿出来，变成团队共享的工程资产。</p>
+<h3 id="常见误区">常见误区</h3>
+<p>团队推进 AI Coding 时，常见误区有五类。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>误区</th>
+<th>短期看起来</th>
+<th>长期问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每个应用各写一套 Agent</td>
+<td>贴近业务，启动快</td>
+<td>通用流程重复建设，行为不一致，维护成本随应用数线性上升</td>
+</tr>
+<tr>
+<td>规则全部塞进 Prompt</td>
+<td>Agent 初期效果明显</td>
+<td>Prompt 越来越长，规则过期无人发现，无法审查来源</td>
+</tr>
+<tr>
+<td>直接让 AI 改代码</td>
+<td>交互简单</td>
+<td>缺少 PRD、设计、计划和验证边界，大 diff 难评审</td>
+</tr>
+<tr>
+<td>上下文越多越好</td>
+<td>AI 看起来知道更多</td>
+<td>无关信息淹没关键约束，成本上升，输出不稳定</td>
+</tr>
+<tr>
+<td>测试失败靠口头解释</td>
+<td>进度不被阻塞</td>
+<td>分不清历史失败和本次回归，质量判断不可审计</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些误区背后是同一个问题：团队没有把 AI Coding 纳入工程系统，而是把它当成一个更强的聊天窗口。</p>
+<h3 id="一个更容易传播的判断">一个更容易传播的判断</h3>
+<p>团队内部讨论 AI Coding 时，可以先用下面这张表判断问题到底出在哪里。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>表面问题</th>
+<th>真正缺的工程能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>某个同学用得很好，其他人复现不了</td>
+<td>个人能力差异</td>
+<td>规则、上下文和验证经验没有资产化</td>
+</tr>
+<tr>
+<td>Agent 每次都要重新解释业务背景</td>
+<td>Prompt 不够长</td>
+<td>没有可路由的团队规则和应用规则</td>
+</tr>
+<tr>
+<td>大需求一交给 AI 就变成大 diff</td>
+<td>模型执行太散</td>
+<td>没有需求切片、阶段产物和 task contract</td>
+</tr>
+<tr>
+<td>测试失败后没人敢信 AI 的解释</td>
+<td>模型判断不可靠</td>
+<td>没有改前 baseline 和验证 ledger</td>
+</tr>
+<tr>
+<td>换工具后历史任务接不上</td>
+<td>工具割裂</td>
+<td>任务状态和产物没有放在共享运行时</td>
+</tr>
+<tr>
+<td>交付结束后经验没有复用</td>
+<td>知识库没人维护</td>
+<td>缺少 summary、规则处置和 archive recall</td>
+</tr>
+</tbody>
+</table></div>
+<p>这个判断比“要不要多写几个 Agent”更重要。团队化落地的关键，不是 Agent 数量，而是这些工程能力是否形成闭环。</p>
+<h2 id="二团队-ai-coding-要补的八类能力">二、团队 AI Coding 要补的八类能力</h2>
+<p>从个人使用走到团队使用，至少要补齐八类能力。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>能力</th>
+<th>解决的问题</th>
+<th>工程边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享运行时</td>
+<td>避免每个应用重复建设 Agent</td>
+<td>统一任务状态、工具、产物、上下文目录</td>
+</tr>
+<tr>
+<td>状态真相源</td>
+<td>避免任务依赖聊天上下文</td>
+<td>当前任务指针、任务 JSON、阶段状态</td>
+</tr>
+<tr>
+<td>稳定阶段产物</td>
+<td>让交付过程可审查</td>
+<td>PRD、设计、计划、总结、验证证据</td>
+</tr>
+<tr>
+<td>规则体系</td>
+<td>避免 Prompt 人工维护失控</td>
+<td>Team SPEC、App SPEC、route page、focused Spec</td>
+</tr>
+<tr>
+<td>有界上下文</td>
+<td>避免全仓扫描和信息过载</td>
+<td>PRD working set、code working set、selected rules</td>
+</tr>
+<tr>
+<td>复杂需求拆分</td>
+<td>避免大 PRD 直接变成大 diff</td>
+<td>功能切片、需求契约、必要时分片交付</td>
+</tr>
+<tr>
+<td>验证治理</td>
+<td>避免测试失败靠口头判断</td>
+<td>改前 baseline、改后验证、失败分类、ledger</td>
+</tr>
+<tr>
+<td>资产沉淀</td>
+<td>让每次交付反哺下一次任务</td>
+<td>summary、Spec update、archive recall、research artifact</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些能力不是一次性做全的平台功能，而是一套可以逐步建设的工程边界。先把状态、产物、规则、验证这几件事固化下来，团队 AI Coding 才有持续演进的基础。</p>
+<p>这里有一个很实用的顺序：先解决“人能不能接手”，再解决“AI 能不能自动”。如果一个任务换人之后连当前状态、需求、设计、计划和验证证据都找不到，过早做自动化只会把不可控流程跑得更快。</p>
+<h2 id="三一个工程化框架的整体结构">三、一个工程化框架的整体结构</h2>
+<p>团队 AI Coding 工程化框架的核心做法，是把 AI Coding 组织成一套项目内共享运行时。运行时承接通用流程，应用差异进入应用规则和历史案例，不同 AI 工具通过适配层接入。</p>
+<p><img src="../assets/diagrams/00-1.svg" alt="一个工程化框架的整体结构"></p>
+
+<p>对应到目录，一个通用实践样本可以这样组织：</p>
+<pre><code class="language-text">.team-agent/
+├── .current-task
+├── config.json
+├── workflow/
+│   └── phase-contracts.json
+├── tools/
+│   ├── task.js
+│   ├── build-prd.js
+│   ├── prd-context.js
+│   ├── code-index.js
+│   ├── context-selection.js
+│   └── spec-context.js
+├── spec/
+│   ├── team/
+│   └── app/
+├── code-index/
+│   └── index.json
+└── tasks/
+    ├── {taskId}/
+    │   ├── task.json
+    │   ├── prd.md
+    │   ├── design.md
+    │   ├── plan.md
+    │   ├── plan.tasks.json
+    │   ├── summary.md
+    │   ├── generated/context/
+    │   ├── evidence/verification-ledger.jsonl
+    │   └── context/archive-recall.json
+    └── archive/
+        └── index.jsonl
+</code></pre>
+<p>这套结构里有几个关键分工：</p>
+<ul>
+<li><code>.current-task</code> 和 <code>task.json</code> 承接任务状态。</li>
+<li><code>prd.md</code>、<code>design.md</code>、<code>plan.md</code>、<code>summary.md</code> 是稳定阶段产物。</li>
+<li><code>generated/context/*.jsonl</code> 是可重建上下文，不是新的状态真相源。</li>
+<li><code>spec/**</code> 承接团队和应用规则。</li>
+<li><code>evidence/verification-ledger.jsonl</code> 承接验证证据。</li>
+<li><code>archive/index.jsonl</code> 承接已完成任务的历史案例索引。</li>
+</ul>
+<p>这些名字都不是重点。重点是把“状态、产物、规则、上下文、证据、归档”分开。只要边界清楚，目录名可以换成 <code>.ai-agent/</code>、<code>.coding-agent/</code> 或团队自己的平台目录。</p>
+<h3 id="这套框架背后的几个理论关键词">这套框架背后的几个理论关键词</h3>
+<p>这套体系不是凭空设计出来的，它背后其实是几条很朴素的软件工程原则。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>理论关键词</th>
+<th>在 AI Coding 团队化里的含义</th>
+<th>落地动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single Source of Truth</td>
+<td>任务状态不能散落在聊天、脚本和 UI 里</td>
+<td>用 <code>task.json</code> 和当前任务指针承接状态</td>
+</tr>
+<tr>
+<td>Bounded Context</td>
+<td>Agent 每次只消费当前阶段必要证据</td>
+<td>用 PRD 切片、规则选择、代码 working set 控制上下文</td>
+</tr>
+<tr>
+<td>Artifact-first</td>
+<td>关键判断不能只存在聊天里</td>
+<td>PRD、设计、计划、总结先落文档再确认</td>
+</tr>
+<tr>
+<td>Evidence-based Review</td>
+<td>质量判断要基于证据链</td>
+<td>改前 baseline、改后验证、ledger 和 staged diff review</td>
+</tr>
+<tr>
+<td>Control Plane / Execution Plane</td>
+<td>调度和执行不能混在一个万能 Agent 里</td>
+<td>控制面推进流程，worker 执行单个 task</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些词听起来像架构概念，但落到团队里就是很具体的问题：任务从哪里恢复、规则从哪里读、失败怎么分类、谁有权推进下一阶段。</p>
+<h2 id="四状态真相源任务不能依赖聊天记忆">四、状态真相源：任务不能依赖聊天记忆</h2>
+<p>个人使用 AI Coding 时，经常靠当前聊天窗口维持上下文。团队场景里，这很危险：会话断了、工具换了、人换了，任务就很难恢复。</p>
+<p>一个最小 <code>task.json</code> 可以长这样：</p>
+<pre><code class="language-json">{
+  &quot;taskId&quot;: &quot;REQ-123456&quot;,
+  &quot;workflowKind&quot;: &quot;feature&quot;,
+  &quot;currentStepId&quot;: &quot;tech_design&quot;,
+  &quot;status&quot;: &quot;in_progress&quot;,
+  &quot;branch&quot;: &quot;feature/prize-type&quot;,
+  &quot;artifacts&quot;: {
+    &quot;prd&quot;: &quot;prd.md&quot;,
+    &quot;design&quot;: &quot;design.md&quot;,
+    &quot;plan&quot;: &quot;plan.md&quot;,
+    &quot;summary&quot;: &quot;summary.md&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;contextMode&quot;: &quot;expanded&quot;,
+    &quot;contextRisks&quot;: [&quot;large_prd&quot;, &quot;multi_domain&quot;]
+  }
+}
+</code></pre>
+<p>这个 JSON 不需要承载所有过程细节，它只保存任务恢复和流程推进必须知道的事实。上下文选择、代码索引、验证证据这类可重建或可追加的信息，应放在自己的产物里，不要都塞回任务状态。</p>
+<p>一个健康的状态模型要满足三个要求：</p>
+<ol>
+<li><strong>可恢复</strong>：换一个会话，能知道当前任务是谁、走到哪一步、下一步该读哪些产物。</li>
+<li><strong>可审查</strong>：任务状态里不能混入大量模型总结，关键事实要能追溯到具体 artifact。</li>
+<li><strong>可清理</strong>：任务归档后，active task 指针要清掉，临时诊断文件不能变成长期状态。</li>
+</ol>
+<p>一个不健康的状态模型通常长这样：<code>task.json</code> 里塞满模型总结、测试日志、候选代码、历史案例和临时判断。短期看信息很全，长期看没人知道哪个字段是事实、哪个字段是缓存、哪个字段已经过期。团队要尽早建立“状态只放状态，证据放证据，缓存可重建”的习惯。</p>
+<h3 id="从聊天驱动到产物驱动">从聊天驱动到产物驱动</h3>
+<p>个人使用 AI Coding 时，常见交互是：“帮我看下这个需求”“帮我实现一下”“测试失败你看下”。这种方式对熟悉上下文的人有效，但团队协作时很难交接和审查。</p>
+<p>团队级流程需要把关键节点产物化：</p>
+<p><img src="../assets/diagrams/00-2.svg" alt="从聊天驱动到产物驱动"></p>
+
+<p>这个流程并不是为了增加仪式感，而是为了回答团队协作中的具体问题：</p>
+<ul>
+<li>需求是否被确认过？</li>
+<li>技术方案是否能被负责人审查？</li>
+<li>开发计划是否拆到可执行 task？</li>
+<li>每个 task 是否有验证命令和通过证据？</li>
+<li>失败测试是否是历史问题？</li>
+<li>这次交付有没有形成后续可用的规则或案例？</li>
+</ul>
+<p>如果这些问题都只能从聊天记录里找答案，AI Coding 很难成为团队能力。</p>
+<h3 id="什么叫足够干的最小标准">什么叫“足够干”的最小标准</h3>
+<p>如果一篇实践文章读完，团队只能得到“要重视上下文”“要做好验证”这类原则，它还不够。真正能落地的内容至少要能回答下面几个问题：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>文章里应该给出的东西</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我从哪里开始建？</td>
+<td>最小目录和文件职责</td>
+</tr>
+<tr>
+<td>我怎么判断做对了？</td>
+<td>检查清单和阻塞条件</td>
+</tr>
+<tr>
+<td>我怎么避免做重？</td>
+<td>先后顺序和低配版路径</td>
+</tr>
+<tr>
+<td>我怎么说服团队？</td>
+<td>真实失控场景和可讨论问题</td>
+</tr>
+<tr>
+<td>我怎么持续演进？</td>
+<td>交付后规则和案例沉淀机制</td>
+</tr>
+</tbody>
+</table></div>
+<p>这个系列后面的每一篇都会围绕这些具体答案展开，而不是停留在“理念正确”。</p>
+<h3 id="一个需求在框架里怎么流转">一个需求在框架里怎么流转</h3>
+<p>以“新增奖品权益类型”为例，完整流转可以拆成七个阶段。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>输入</th>
+<th>输出</th>
+<th>人需要关注什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求结构化</td>
+<td>工单、Wiki、人工 PRD</td>
+<td><code>prd.md</code>、<code>prd/index.json</code>、<code>prd/feature-*.md</code></td>
+<td>需求范围是否清楚，功能点是否漏拆</td>
+</tr>
+<tr>
+<td>规则选择</td>
+<td>PRD 切片、SPEC route page</td>
+<td>selected SPEC refs</td>
+<td>是否命中业务规则，是否有设计前必须确认的问题</td>
+</tr>
+<tr>
+<td>技术设计</td>
+<td>PRD、规则、代码 working set</td>
+<td><code>design.md</code></td>
+<td>方案是否覆盖核心链路、兼容、数据、稳定性</td>
+</tr>
+<tr>
+<td>开发计划</td>
+<td><code>design.md</code>、代码引用</td>
+<td><code>plan.md</code>、<code>plan.tasks.json</code></td>
+<td>task 是否可执行，是否有验证命令和验收标准</td>
+</tr>
+<tr>
+<td>任务开发</td>
+<td>单个 task、allowed paths</td>
+<td>staged diff、验证记录</td>
+<td>diff 是否只覆盖当前 task，是否满足验收</td>
+</tr>
+<tr>
+<td>交付总结</td>
+<td>diff、验证证据、计划完成情况</td>
+<td><code>summary.md</code></td>
+<td>这次改动的边界、风险和后续事项</td>
+</tr>
+<tr>
+<td>资产沉淀</td>
+<td>summary、历史问题、规则变化</td>
+<td>SPEC 更新、archive index</td>
+<td>哪些经验下次还要用</td>
+</tr>
+</tbody>
+</table></div>
+<p>这套流转的目的不是让 AI 每一步都自动化，而是让人和 AI 围绕同一批产物协作。AI 负责生成、搜索、初步修改和整理，人负责关键判断、边界确认和风险兜底。</p>
+<h2 id="五低配版也能先跑起来">五、低配版也能先跑起来</h2>
+<p>很多团队会担心：如果要做 code-index、selector、archive recall、workspace，听起来是不是太重。实际落地时可以从低配版开始。</p>
+<pre><code class="language-text">.team-agent/
+├── current-task
+├── spec/
+│   ├── team/
+│   └── app/
+├── tasks/
+│   └── {taskId}/
+│       ├── task.json
+│       ├── prd.md
+│       ├── design.md
+│       ├── plan.md
+│       ├── plan.tasks.json
+│       ├── summary.md
+│       ├── context/
+│       └── evidence/
+└── archive/
+    └── index.jsonl
+</code></pre>
+<p>第一阶段只要求做到：</p>
+<ol>
+<li>每个 AI Coding 任务都有任务目录。</li>
+<li>需求、设计、计划、总结落成 Markdown。</li>
+<li>团队规则和应用规则不要写死在 Prompt 中。</li>
+<li>每个 task 都记录验证命令和结果。</li>
+<li>交付结束后判断是否需要更新规则或归档案例。</li>
+</ol>
+<p>这五件事做好后，再考虑自动选择上下文、自动召回历史案例、多工具适配和协作工作台。不要一开始就把系统做成大平台，否则团队还没有形成稳定习惯，维护成本已经先上来了。</p>
+<h3 id="建设顺序建议">建设顺序建议</h3>
+<p>一个比较稳的建设顺序是：</p>
+<ol>
+<li><strong>先产物化</strong>：固定 <code>prd.md</code>、<code>design.md</code>、<code>plan.md</code>、<code>summary.md</code>，让团队从聊天驱动切到产物驱动。</li>
+<li><strong>再规则化</strong>：把 Prompt 里的长期规则拆到 <code>spec/team</code> 和 <code>spec/app</code>，建立 route page 和 focused Spec。</li>
+<li><strong>再上下文化</strong>：让 PRD 切片、SPEC、代码引用和历史案例进入 working set，而不是全量塞给模型。</li>
+<li><strong>再证据化</strong>：建立改前 baseline、改后验证、失败分类和 ledger。</li>
+<li><strong>最后协作化</strong>：当产物和证据稳定后，再做 Feature Room、Review Request、指标看板等协作面。</li>
+</ol>
+<p>这条路径的好处是每一步都有独立收益。即使团队暂时没有做复杂 Agent 编排，只要先把产物、规则和验证固定下来，AI Coding 的稳定性就会明显提升。</p>
+<h2 id="六自查清单">六、自查清单</h2>
+<p>可以用下面的问题判断团队是否还停留在个人使用阶段：</p>
+<ul>
+<li>换一个人能否继续同一个 AI Coding 任务？</li>
+<li>需求、设计、计划、验证证据是否有稳定文件？</li>
+<li>应用规则是否主要写在 Prompt 或聊天模板里？</li>
+<li>相似需求的历史经验能否被后续任务重新找到？</li>
+<li>AI 修改代码前是否知道当前测试 baseline？</li>
+<li>一个大需求是否会先拆成功能点边界？</li>
+<li>负责人审查的是 artifact 和 diff，还是只能看聊天记录？</li>
+<li>更换 AI 工具时，任务状态和产物是否还能保留？</li>
+</ul>
+<p>如果多数答案是否定的，优先建设共享运行时、SPEC 体系和阶段产物，而不是继续增加单点 Agent 数量。</p>
+<h2 id="七思考与实践">七、思考与实践</h2>
+<ol>
+<li>你们团队现在 AI Coding 最大的问题，是个人经验难复用、规则难维护、上下文失控，还是验证不清？</li>
+<li>如果让另一个同事明天接手你当前的 AI Coding 任务，他需要哪些文件才能继续？</li>
+<li>你们团队最应该先补的是任务状态、规则体系、上下文工程，还是验证证据？欢迎带着具体场景讨论。</li>
+</ol>
+<h2 id="八结尾">八、结尾</h2>
+<p>团队 AI Coding 的核心挑战，不是让每个人都学会更复杂的提示词，而是让团队有一套稳定工程系统承接 AI 的输入、输出和沉淀。</p>
+<p>个人提效靠技巧，团队稳定靠系统。下一篇进入共享运行时：为什么不要让每个应用都重复建设 Agent，以及团队最小任务目录应该如何承接状态、产物和验证证据。</p></article><div class="practice-link"><a href="https://github.com/DavidDingXu/ai-coding-for-teams/blob/main/12-minimal-playbook.md" target="_blank" rel="noopener"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg> 团队最小落地包 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></div><nav class="chapter-nav" aria-label="前后篇"><span></span><a href="01.html"><span>下一篇 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>共享运行时：不要让每个应用都重复建设 Agent</strong></a></nav><footer class="reader-footer">AI Coding 团队化实战 · <a href="../license.html">非商业使用</a><details class="community-mini"><summary>关注与交流 · 好好用 AI</summary><div class="community-section"><div><p>交流学习中的问题与实践心得。</p><p>代码问题和勘误，欢迎在 <a href="https://github.com/DavidDingXu/ai-coding-for-teams/issues" target="_blank" rel="noopener">GitHub 提交 Issue</a>。</p></div><a class="qr-link" href="../assets/wechat-official-account.jpg" target="_blank" rel="noopener" aria-label="查看好好用 AI 公众号二维码原图"><img src="../assets/wechat-official-account.jpg" alt="好好用 AI 微信公众号二维码" width="130" height="130" loading="lazy"><p class="qr-caption">微信扫码 · 点击查看原图</p></a></div></details></footer></main><aside class="context-sidebar" aria-label="本篇辅助导航"><div class="context-inner"><nav class="reading-route" aria-label="本篇路线"><details open><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一一个典型场景个人能跑通团队接不住">一、一个典型场景：个人能跑通，团队接不住</a></li>
+<li><a href="#二团队-ai-coding-要补的八类能力">二、团队 AI Coding 要补的八类能力</a></li>
+<li><a href="#三一个工程化框架的整体结构">三、一个工程化框架的整体结构</a></li>
+<li><a href="#四状态真相源任务不能依赖聊天记忆">四、状态真相源：任务不能依赖聊天记忆</a></li>
+<li><a href="#五低配版也能先跑起来">五、低配版也能先跑起来</a></li>
+<li><a href="#六自查清单">六、自查清单</a></li>
+<li><a href="#七思考与实践">七、思考与实践</a></li>
+<li><a href="#八结尾">八、结尾</a></li>
+</ul>
+</div>
+</details></nav></div></aside></div><dialog class="search-dialog" id="search-dialog" aria-labelledby="search-label"><form method="dialog" class="search-heading"><label for="course-search" id="search-label"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>搜索课程</label><button class="icon-button" aria-label="关闭搜索"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form><input id="course-search" type="search" placeholder="搜索概念、代码或问题…" autocomplete="off" spellcheck="false"><p class="search-status" id="search-status" role="status">搜索全部 14 篇文章。</p><div class="search-results" id="search-results"></div><footer>↑ ↓ 选择结果 <span>Enter 打开 · Esc 关闭</span></footer></dialog>
+<dialog class="image-viewer" id="image-viewer" aria-label="放大配图"><header><span>查看配图</span><div class="image-actions"><button type="button" id="image-size">原尺寸</button><button type="button" id="close-image" autofocus>关闭</button></div></header><div class="image-canvas"><img id="large-image" alt=""></div><footer><p id="image-description"></p><a id="original-image" target="_blank" rel="noopener">打开原图 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></footer></dialog><div class="toast" id="toast" role="status"></div></body></html>

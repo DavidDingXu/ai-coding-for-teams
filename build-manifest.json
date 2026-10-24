@@ -1,0 +1,89 @@
+{
+  "repository": "DavidDingXu/ai-coding-for-teams",
+  "articles": [
+    {
+      "id": "00",
+      "title": "个人会用 AI Coding，为什么团队还是用不好？",
+      "url": "course/00.html",
+      "source": "00-overview.md"
+    },
+    {
+      "id": "01",
+      "title": "共享运行时：不要让每个应用都重复建设 Agent",
+      "url": "course/01.html",
+      "source": "01-shared-runtime.md"
+    },
+    {
+      "id": "02",
+      "title": "SPEC 体系：把规则从 Prompt 里拿出来",
+      "url": "course/02.html",
+      "source": "02-spec-system.md"
+    },
+    {
+      "id": "03",
+      "title": "复杂需求拆分：大 PRD 不能直接丢给 Agent",
+      "url": "course/03.html",
+      "source": "03-requirement-slicing.md"
+    },
+    {
+      "id": "04",
+      "title": "有界上下文：不是给 Agent 更多，而是给得更准",
+      "url": "course/04.html",
+      "source": "04-bounded-context.md"
+    },
+    {
+      "id": "05",
+      "title": "阶段化交付：别让 AI 从一句话直接改代码",
+      "url": "course/05.html",
+      "source": "05-artifact-delivery.md"
+    },
+    {
+      "id": "06",
+      "title": "Task 化开发：把大 Diff 拆成可审查的工程任务",
+      "url": "course/06.html",
+      "source": "06-task-development-review.md"
+    },
+    {
+      "id": "07",
+      "title": "验证治理：AI 说“测试失败无关”是不够的",
+      "url": "course/07.html",
+      "source": "07-verification-governance.md"
+    },
+    {
+      "id": "08",
+      "title": "资产沉淀：让每次交付反哺下一次任务",
+      "url": "course/08.html",
+      "source": "08-asset-flywheel.md"
+    },
+    {
+      "id": "09",
+      "title": "Agent 分层：不要让一个万能 Agent 包办所有事",
+      "url": "course/09.html",
+      "source": "09-adapter-agent-layering.md"
+    },
+    {
+      "id": "10",
+      "title": "多工具适配：把共享语义放 Runtime，把工具差异放 Adapter",
+      "url": "course/10.html",
+      "source": "10-adapter-tooling.md"
+    },
+    {
+      "id": "11",
+      "title": "协作面：团队如何审查和接管 Agent 产物",
+      "url": "course/11.html",
+      "source": "11-workspace-collaboration.md"
+    },
+    {
+      "id": "12",
+      "title": "团队最小落地包：从一套目录、一条流程、三类规则开始",
+      "url": "course/12.html",
+      "source": "12-minimal-playbook.md"
+    },
+    {
+      "id": "13",
+      "title": "写在最后：AI Coding 团队化，最后还是工程问题",
+      "url": "course/13.html",
+      "source": "13-closing.md"
+    }
+  ]
+}

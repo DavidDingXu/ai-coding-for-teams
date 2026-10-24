@@ -1,0 +1,595 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPEC 体系：把规则从 Prompt 里拿出来 · AI Coding for Teams</title><meta name="description" content="把个人使用经验，变成团队可复制、可审查、可接管的工程能力。从一个真实需求开始，逐步建立规则、上下文、验证与协作。"><meta name="source-sha256" content="e411f68b73e97e8483dea04202949d086da1ac40b9d1729caf8ddedeaf95effa">
+<link rel="canonical" href="https://daviddingxu.github.io/ai-coding-for-teams/course/02.html"><link rel="icon" href="../assets/brand.png">
+<script>try{const t=localStorage.getItem('haohai-course-theme');document.documentElement.dataset.theme=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light'}catch(_){document.documentElement.dataset.theme='light'}</script>
+<link rel="stylesheet" href="../assets/site.css"><script defer src="../assets/search-index.js"></script><script defer src="../assets/site.js"></script></head><body class="article-page" data-root="../" data-page="02"><a class="skip-link" href="#main-content">跳到正文</a><header class="site-header"><div class="header-inner"><button class="icon-button menu-toggle js-only" type="button" aria-label="打开课程目录" aria-controls="course-sidebar" aria-expanded="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<a class="brand" href="../index.html" aria-label="AI Coding for Teams · 学习站首页"><img src="../assets/brand.png" alt="" width="36" height="36"><span><strong>AI Coding for Teams</strong><small>AI Coding 团队化实战</small></span></a>
+<nav class="header-nav" aria-label="主导航"><a href="../index.html#curriculum">课程目录</a><a href="../index.html#downloads">离线阅读</a><a href="https://github.com/DavidDingXu/ai-coding-for-teams" target="_blank" rel="noopener">GitHub <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></nav>
+<div class="header-controls"><button class="icon-button theme-toggle js-only" type="button" aria-label="切换到深色主题" title="切换到深色主题"><span class="theme-light-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></span><span class="theme-dark-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></span></button><button class="search-trigger js-only" type="button" aria-label="搜索课程"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span>搜索课程</span><kbd>⌘ K</kbd></button></div></div><div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div></header><div class="sidebar-scrim" hidden></div><div class="reader-layout"><aside class="course-sidebar" id="course-sidebar" aria-label="课程目录"><div class="sidebar-heading"><a href="../index.html#curriculum">课程目录</a><button class="icon-button menu-close js-only" type="button" aria-label="关闭课程目录"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><nav aria-label="全部文章"><details class="sidebar-stage" open><summary><span class="stage-index">模块 01</span>从个人经验到团队系统</summary><a class="lesson-link" data-lesson="00" href="00.html"><span class="lesson-number">00</span><span>个人会用 AI Coding，为什么团队还是用不好？</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="01" href="01.html"><span class="lesson-number">01</span><span>共享运行时：不要让每个应用都重复建设 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="02" href="02.html" aria-current="page"><span class="lesson-number">02</span><span>SPEC 体系：把规则从 Prompt 里拿出来</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 02</span>从复杂需求到可审查交付</summary><a class="lesson-link" data-lesson="03" href="03.html"><span class="lesson-number">03</span><span>复杂需求拆分：大 PRD 不能直接丢给 Agent</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="04" href="04.html"><span class="lesson-number">04</span><span>有界上下文：不是给 Agent 更多，而是给得更准</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="05" href="05.html"><span class="lesson-number">05</span><span>阶段化交付：别让 AI 从一句话直接改代码</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="06" href="06.html"><span class="lesson-number">06</span><span>Task 化开发：把大 Diff 拆成可审查的工程任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 03</span>从一次成功到持续复用</summary><a class="lesson-link" data-lesson="07" href="07.html"><span class="lesson-number">07</span><span>验证治理：AI 说“测试失败无关”是不够的</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="08" href="08.html"><span class="lesson-number">08</span><span>资产沉淀：让每次交付反哺下一次任务</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 04</span>从单 Agent 到团队协作</summary><a class="lesson-link" data-lesson="09" href="09.html"><span class="lesson-number">09</span><span>Agent 分层：不要让一个万能 Agent 包办所有事</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="10" href="10.html"><span class="lesson-number">10</span><span>多工具适配：把共享语义放 Runtime，把工具差异放 Adapter</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="11" href="11.html"><span class="lesson-number">11</span><span>协作面：团队如何审查和接管 Agent 产物</span><span class="lesson-state" aria-hidden="true"></span></a></details><details class="sidebar-stage"><summary><span class="stage-index">模块 05</span>最小试点与收官</summary><a class="lesson-link" data-lesson="12" href="12.html"><span class="lesson-number">12</span><span>团队最小落地包：从一套目录、一条流程、三类规则开始</span><span class="lesson-state" aria-hidden="true"></span></a><a class="lesson-link" data-lesson="13" href="13.html"><span class="lesson-number">13</span><span>写在最后：AI Coding 团队化，最后还是工程问题</span><span class="lesson-state" aria-hidden="true"></span></a></details></nav><p class="sidebar-note">规则可维护，交付可审查，经验可复用。</p></aside><main class="reader-main" id="main-content"><div class="article-context"><span>从个人经验到团队系统</span><div class="reading-tools js-only"><div class="font-controls" role="group" aria-label="正文字号"><button type="button" data-font="-1" aria-label="减小正文字号">A−</button><span id="font-size-label" aria-live="polite">18</span><button type="button" data-font="1" aria-label="增大正文字号">A+</button></div><button type="button" class="focus-toggle" aria-pressed="false"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span>专注阅读</span></button></div></div><div class="mobile-context"><nav class="reading-route" aria-label="本篇路线"><details><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一一个真实问题prompt-为什么会越写越乱">一、一个真实问题：Prompt 为什么会越写越乱</a></li>
+<li><a href="#二判断一条规则该不该进-spec">二、判断一条规则该不该进 SPEC</a></li>
+<li><a href="#三spec-目录怎么设计">三、SPEC 目录怎么设计</a></li>
+<li><a href="#四规则如何进入-agent-上下文">四、规则如何进入 Agent 上下文</a></li>
+<li><a href="#五团队参考做法">五、团队参考做法</a></li>
+<li><a href="#六检查清单">六、检查清单</a></li>
+<li><a href="#七思考与实践">七、思考与实践</a></li>
+<li><a href="#八结尾">八、结尾</a></li>
+</ul>
+</div>
+</details></nav></div><article id="article-body"><h1 id="spec-体系把规则从-prompt-里拿出来">SPEC 体系：把规则从 Prompt 里拿出来</h1>
+<p>很多团队刚开始做 AI Coding Agent 时，会把大部分规则写进 Prompt：代码风格、目录结构、日志要求、接口规范、业务规则、测试要求、上线注意事项都往里塞。这样做初期见效很快，因为 Agent 确实能在一次会话里“知道更多”。但随着应用增多、规则变多、业务变化变快，Prompt 很快会变成一个没人敢改、没人能审、也没人知道是否过期的大文件。</p>
+<p>更麻烦的是，Prompt 往往会混在两类完全不同的内容：一类是执行流程，例如“先读 PRD，再写 design.md，再输出 JSON”；另一类是业务和工程知识，例如“新增奖品类型必须覆盖创建、查询、展示和回滚路径”。前者属于 Agent 行为契约，应该跟着工具和流程演进；后者属于团队知识资产，应该能被检索、审查、维护和复用。两类内容混在一起，后期一定会失控。</p>
+<p>团队级 AI Coding 需要把长期规则从 Prompt 中剥离出来，形成可被 Agent 消费的 SPEC 体系。这里的 SPEC 可以理解为“面向 Agent 的项目知识库”，但它不是普通 Wiki 的搬运。一个可用的 SPEC 体系要有目录、路由、适用阶段、注入策略、来源说明和维护流程。</p>
+<blockquote>
+<p>一句话结论：<strong>Prompt 适合承接流程，SPEC 才适合承接团队知识。</strong></p>
+</blockquote>
+<h2 id="一一个真实问题prompt-为什么会越写越乱">一、一个真实问题：Prompt 为什么会越写越乱</h2>
+<p>假设团队最初只有一个应用，Prompt 里写了这些规则：</p>
+<ul>
+<li>代码必须遵循三层架构。</li>
+<li>Controller 不能写业务逻辑。</li>
+<li>新增接口要补日志。</li>
+<li>新增奖品类型要兼容存量类型。</li>
+<li>退款需求要确认是否影响补偿链路。</li>
+<li>单测失败要先判断是否历史失败。</li>
+</ul>
+<p>这时看起来还可以。但当第二个应用接入时，问题出现了：第二个应用没有奖品类型，却有账户冻结和履约规则；第三个应用使用不同目录结构，日志规范也不一样。团队很容易走向两种做法：</p>
+<ol>
+<li>把所有规则继续塞进一个总 Prompt。</li>
+<li>每个应用复制一份 Prompt，然后各自修改。</li>
+</ol>
+<p>第一种做法会让上下文越来越重，Agent 每次都读大量不相关规则。第二种做法会让同一条通用规则被复制到多个地方，后期维护时必然遗漏。更糟的是，交付过程中发现的新规则，经常只留在聊天记录、PR 评论或某个研发的脑子里，下一次需求又要重新解释。</p>
+<p>SPEC 体系要解决的不是“文档不够多”，而是“团队知识没有工程边界”。</p>
+<h3 id="常见误区">常见误区</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>误区</th>
+<th>表现</th>
+<th>后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>把规则都写进 Prompt</td>
+<td>Prompt 越写越长，所有应用共享一份大规则</td>
+<td>应用差异无法表达，规则过期后难发现</td>
+</tr>
+<tr>
+<td>每个应用维护一套 Agent Prompt</td>
+<td>A 应用一套，B 应用一套，C 应用一套</td>
+<td>通用规则重复维护，行为不一致</td>
+</tr>
+<tr>
+<td>把知识库当文档仓库</td>
+<td>Wiki 很全，但 Agent 不知道该读哪篇</td>
+<td>检索和注入不可控，关键规则容易漏</td>
+</tr>
+<tr>
+<td>把所有规则都强制注入</td>
+<td>每次任务都加载全量规范</td>
+<td>上下文预算浪费，不相关规则干扰判断</td>
+</tr>
+<tr>
+<td>交付后不更新规则</td>
+<td>踩坑经验留在聊天和 PR 里</td>
+<td>下一次类似需求还要重新解释</td>
+</tr>
+</tbody>
+</table></div>
+<p>规则体系的关键不是“文档更多”，而是让规则具备可路由、可选择、可验证、可演进的结构。</p>
+<h2 id="二判断一条规则该不该进-spec">二、判断一条规则该不该进 SPEC</h2>
+<p>不是所有信息都应该沉淀成规则。很多团队的规则库失控，不是因为规则太少，而是因为把临时事实、一次性解释和长期规则混在一起。</p>
+<p>可以用下面这张表判断：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>是否进 SPEC</th>
+<th>更合适的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“新增权益类型必须覆盖创建、查询、展示路径”</td>
+<td>是</td>
+<td><code>spec/app/business/</code></td>
+</tr>
+<tr>
+<td>“本次需求不做管理端入口”</td>
+<td>否</td>
+<td>当前 <code>prd.md</code> 或 <code>design.md</code></td>
+</tr>
+<tr>
+<td>“这个应用使用 Maven，单测命令是 xxx”</td>
+<td>是</td>
+<td><code>spec/app/engineering/</code> 或 <code>profile.md</code></td>
+</tr>
+<tr>
+<td>“这次测试环境 Redis 不稳定”</td>
+<td>否</td>
+<td><code>verification-ledger</code> 或 <code>summary.md</code></td>
+</tr>
+<tr>
+<td>“接口字段 A 是历史兼容字段，不能删除”</td>
+<td>是</td>
+<td><code>spec/app/domain/</code> 或 <code>business/</code></td>
+</tr>
+<tr>
+<td>“某次实现选择了方案 B，因为工期短”</td>
+<td>不一定</td>
+<td>更适合 archive case</td>
+</tr>
+</tbody>
+</table></div>
+<p>一个简单标准是：<strong>下一次类似需求开始前，是否希望 Agent 自动看到这条信息？</strong> 如果是，就考虑进入 SPEC；如果只是本次任务事实，就不要污染长期规则。</p>
+<h3 id="设计原则">设计原则</h3>
+<p>SPEC 体系设计可以遵循三条原则。</p>
+<p>第一，<strong>流程规则和知识规则分离</strong>。Agent Prompt 负责执行机制，例如如何调用工具、如何输出 JSON、什么时候写 artifact；SPEC 负责可复用知识，例如业务不变量、工程规范、接口约束、测试要求。</p>
+<p>第二，<strong>团队规则和应用规则分层</strong>。团队通用规则只维护一份，应用差异放到应用自己的 SPEC。不要因为某个应用有特殊业务，就复制一套完整 Agent。</p>
+<p>第三，<strong>规则按任务语义选择，不全量注入</strong>。默认只注入路由页和必要硬规则，其他规则通过当前 PRD、代码上下文、阶段和 Agent 职责选择进入 working set。</p>
+<h2 id="三spec-目录怎么设计">三、SPEC 目录怎么设计</h2>
+<p>一个通用的 SPEC 目录可以分成两层：<code>team/</code> 是团队基线规则，<code>app/</code> 是具体业务应用的规则。</p>
+<pre><code class="language-text">.team-agent/spec/
+├── team/
+│   ├── index.md
+│   ├── requirement.md
+│   ├── architecture.md
+│   ├── implementation-java.md
+│   ├── middleware.md
+│   ├── verification.md
+│   └── delivery.md
+└── app/
+    ├── profile.md
+    ├── index.md
+    ├── .initialized.json
+    ├── domain/
+    │   └── index.md
+    ├── business/
+    │   └── index.md
+    └── engineering/
+        └── index.md
+</code></pre>
+<p>这套目录有几个明确边界：</p>
+<ul>
+<li><code>spec/team/**</code> 承接团队基线规则，例如需求、设计、Java 实现、验证、交付。</li>
+<li><code>spec/app/profile.md</code> 描述当前应用边界，例如应用名、技术栈、主要模块、测试入口。</li>
+<li><code>spec/app/domain/**</code> 承接领域知识，例如订单、奖品、账户、履约等模型和不变量。</li>
+<li><code>spec/app/business/**</code> 承接可复用业务需求开发规则，例如某类业务变更的流程、接口约束、设计前确认问题。</li>
+<li><code>spec/app/engineering/**</code> 承接应用工程规范，例如分层目录、日志、异常、配置、测试、中间件接入。</li>
+</ul>
+<p>应用级顶层目录建议保持封闭：只允许 <code>profile.md</code>、<code>index.md</code>、<code>.initialized.json</code>、<code>domain/</code>、<code>business/</code>、<code>engineering/</code>。封闭不是为了限制表达，而是为了防止知识目录越长越散，最后人和 Agent 都不知道规则应该放在哪里。</p>
+<h3 id="route-page-和-focused-spec">Route Page 和 Focused Spec</h3>
+<p>SPEC 体系里有两类文件。</p>
+<p>第一类是 <strong>route page</strong>，也就是路由页。它的职责是告诉 Agent 和人“有哪些规则，什么时候去读哪一篇”。<code>index.md</code> 属于 route page，不带 frontmatter，不承接大段规则正文。</p>
+<p>一个业务规则路由页可以长这样：</p>
+<pre><code class="language-md"># Business Spec Index
+
+## Overview
+
+业务规则目录承接可复用业务需求开发规则、验收约束和设计前确认问题。
+
+## Available Specs
+
+| Spec | When To Use | Path |
+|---|---|---|
+| Prize Type Development | 涉及奖品类型、权益类型、奖品配置扩展 | `.team-agent/spec/app/business/prize-type.md` |
+| Order Refund Policy | 涉及订单退款、撤销、补偿规则 | `.team-agent/spec/app/business/order-refund.md` |
+
+## Quick Triggers
+
+- 奖品类型、权益类型、配置生成、权益展示
+- 退款策略、补偿策略、履约回滚
+
+## Pre-Development Checklist
+
+- 当前需求是否命中已有业务规则？
+- 是否存在设计前必须确认的问题？
+
+## Quality Check
+
+- 路由页只做导航，不重复 focused Spec 正文。
+</code></pre>
+<p>第二类是 <strong>focused Spec</strong>，也就是聚焦规则。它承接某一个具体主题的规则、示例、DO / DON'T、Checklist 和来源。</p>
+<pre><code class="language-md">---
+mode: auto
+phases: tech_design,plan_delivery,develop_feature
+agents: design-agent,plan-agent,task-worker
+---
+
+# Prize Type Development
+
+&gt; Purpose: 说明奖品类型扩展在当前应用中如何设计、计划和实现。
+
+## Overview
+
+奖品类型扩展涉及配置、识别、查询展示和兼容逻辑。新增类型时需要确认是否影响存量奖品、是否需要新增权益枚举、是否需要补充管理端配置。
+
+## How To Apply
+
+- `tech_design` 阶段先确认新增类型是否改变既有状态机。
+- `plan_delivery` 阶段拆分配置、领域模型、接口展示和测试任务。
+- `develop_feature` 阶段优先补充枚举映射、配置解析和回归测试。
+
+## Rules
+
+| Rule | Reason |
+|---|---|
+| 新增奖品类型必须有存量兼容策略 | 防止旧类型查询或展示行为变化 |
+| 新增类型必须覆盖创建、查询、展示和回滚路径 | 避免只实现写入不实现读取 |
+
+## DO / DON'T
+
+DO:
+
+- 先确认业务枚举和数据库存储值的对应关系。
+- 为存量类型补回归测试。
+
+DON'T:
+
+- 不要只在接口层新增枚举，忽略配置生成和展示路径。
+- 不要把一次性需求说明写成长期规则。
+
+## Checklist
+
+- [ ] 是否确认新增类型的业务含义？
+- [ ] 是否确认存量类型行为不变？
+- [ ] 是否补充创建、查询、展示测试？
+
+## Source Reference
+
+- 来源：历史需求总结、代码评审结论、业务方确认。
+</code></pre>
+<p>这类文件带三个 metadata：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td>注入模式，<code>auto</code> 表示语义命中后注入，<code>required</code> 表示匹配阶段强制注入</td>
+</tr>
+<tr>
+<td><code>phases</code></td>
+<td>适用阶段，例如 <code>tech_design</code>、<code>plan_delivery</code>、<code>develop_feature</code></td>
+</tr>
+<tr>
+<td><code>agents</code></td>
+<td>适用 Agent，例如 designer、planner、task worker、reviewer</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>mode: required</code> 要谨慎使用，只适合短硬规则，并且规则正文应该放在 <code>## Runtime Rules</code> 下。大段业务知识、完整模块地图、通用背景说明都不应该强制注入。</p>
+<h3 id="required-和-auto-怎么选">Required 和 Auto 怎么选</h3>
+<p>很多团队会把所有重要规则都标成 required，结果每次任务上下文都很重。更稳的做法是把“必须无条件遵守的短规则”和“命中语义后才展开的知识”分开。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>适合内容</th>
+<th>不适合内容</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>required</code></td>
+<td>短硬规则、流程禁令、安全红线</td>
+<td>大段业务背景、模块地图、案例说明</td>
+<td>“不得跳过 baseline 验证”</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>业务规则、领域知识、工程规范、案例化约束</td>
+<td>每次都必须执行的流程动作</td>
+<td>“新增奖品类型的设计和验证要求”</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>required</code> 的正文最好只保留在 <code>## Runtime Rules</code> 下，几条就够。<code>auto</code> 才是大多数 focused Spec 的默认形态。这样 Agent 每次都能看到必要红线，但不会被大量不相关规则淹没。</p>
+<h2 id="四规则如何进入-agent-上下文">四、规则如何进入 Agent 上下文</h2>
+<p>SPEC 不是全量写进 Prompt，而是经过选择后进入上下文。</p>
+<p><img src="../assets/diagrams/02-1.svg" alt="规则如何进入 Agent 上下文"></p>
+
+<p>在一个通用实现里，这条链路可以由几类工具和文件承接：</p>
+<pre><code class="language-text">runtime/templates/tools/spec-context.js
+runtime/templates/tools/context-selection.js
+runtime/templates/tools/task.js
+.team-agent/cache/tasks/{taskId}/context-selection.json
+</code></pre>
+<p>一个简化后的 selector cache 可以长这样：</p>
+<pre><code class="language-json">{
+  &quot;phase&quot;: &quot;tech_design&quot;,
+  &quot;agent&quot;: &quot;design-agent&quot;,
+  &quot;selectedSpecRefs&quot;: [
+    &quot;.team-agent/spec/app/business/prize-type.md&quot;,
+    &quot;.team-agent/spec/app/engineering/api-contract.md&quot;
+  ],
+  &quot;recommendedBusinessSpecs&quot;: [
+    &quot;.team-agent/spec/app/business/prize-type.md&quot;
+  ],
+  &quot;confirmedBusinessSpecs&quot;: [
+    &quot;.team-agent/spec/app/business/prize-type.md&quot;
+  ],
+  &quot;fingerprints&quot;: {
+    &quot;selectorInput&quot;: &quot;sha256:input&quot;,
+    &quot;selectorOutput&quot;: &quot;sha256:output&quot;
+  }
+}
+</code></pre>
+<p>这里的重点不是字段名，而是选择结果必须可追溯。Agent 在设计阶段读了哪些规则、为什么读这些规则、这些规则是否已经被负责人确认，都应该能从 cache 或对应产物中找到证据。</p>
+<p>注入顺序建议采用 <code>route -&gt; required -&gt; auto</code>：</p>
+<ol>
+<li><code>route</code>：注入顶层和祖先 <code>index.md</code>，让 Agent 知道路由结构。</li>
+<li><code>required</code>：注入匹配当前阶段和 Agent 的硬规则，只取 <code>## Runtime Rules</code>。</li>
+<li><code>auto</code>：从 selector cache 的 selected refs 中按预算展开 focused Spec 正文。</li>
+</ol>
+<p>这种做法解决两个问题：一方面，Agent 不会因为全量规则上下文过载；另一方面，选中的规则有来源、有路径、有选择结果，后续可以审查为什么这次任务读了这些规则。</p>
+<h3 id="一条规则从产生到复用的闭环">一条规则从产生到复用的闭环</h3>
+<p>SPEC 不是写完就结束，它应该来自真实交付，再服务下一次交付。</p>
+<p><img src="../assets/diagrams/02-2.svg" alt="一条规则从产生到复用的闭环"></p>
+
+<p>这个闭环能避免两类问题：规则不是靠人拍脑袋定期整理，而是来自真实需求；规则也不是写进文档后没人用，而是会进入后续任务上下文。</p>
+<h3 id="设计前确认问题">设计前确认问题</h3>
+<p>SPEC 不只是告诉 Agent “怎么做”，也可以告诉流程“哪些问题必须先问清楚”。例如一个业务 focused Spec 里可以有这样的结构：</p>
+<pre><code class="language-md">## 设计前确认问题
+
+1. 新增奖品类型是否允许存量订单查询展示？
+2. 是否需要管理端配置入口？
+3. 是否影响退款、补偿或履约回滚？
+</code></pre>
+<p>当当前需求命中这个 focused Spec 时，流程不应该直接进入技术设计，而是先把这些问题补齐。补齐后的答案应该写入 <code>design.md</code> 的前置事实区，例如：</p>
+<pre><code class="language-md">## 设计前置事实
+
+- 新增奖品类型允许存量订单查询展示，展示名称沿用配置中心。
+- 本次不新增管理端配置入口，只复用现有配置导入链路。
+- 不影响退款和补偿链路，但需要补充查询展示回归测试。
+</code></pre>
+<p>这样做的价值很直接：业务规则不再只是“建议阅读”，而是能真正影响流程。缺关键事实时，Agent 不会自作主张生成方案。</p>
+<h3 id="spec-什么时候维护">SPEC 什么时候维护</h3>
+<p>规则体系真正难的不是建目录，而是后期维护。可以把维护入口放在三个位置。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>入口</th>
+<th>使用场景</th>
+<th>产物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ai-init-spec</code></td>
+<td>应用首次接入，初始化应用 SPEC 拓扑</td>
+<td><code>profile.md</code>、根 <code>index.md</code>、三类子目录、<code>.initialized.json</code></td>
+</tr>
+<tr>
+<td><code>update_spec</code> 阶段</td>
+<td>一次 feature 交付结束后，判断是否有可复用规则</td>
+<td>更新已有 focused Spec、推荐新增 Spec、或确认无需更新</td>
+</tr>
+<tr>
+<td><code>/ai-spec-add</code> / <code>/ai-spec-update</code></td>
+<td>任务外补充规则或修正规则</td>
+<td>新增 focused Spec、更新 route page、修订已有 Spec</td>
+</tr>
+</tbody>
+</table></div>
+<p>每次变更 <code>spec/app/**</code> 后，都应该跑校验：</p>
+<pre><code class="language-bash">node .team-agent/tools/task.js check-app-spec
+</code></pre>
+<p>校验重点包括：</p>
+<ul>
+<li>app 顶层是否只包含允许的文件和目录。</li>
+<li><code>profile.md</code> 和 focused Spec 是否带 <code>mode/phases/agents</code>。</li>
+<li><code>index.md</code> 是否保持 route page，不误加 focused Spec frontmatter。</li>
+<li><code>.initialized.json</code> 是否只在用户确认后写入。</li>
+<li>业务规则是否放在 <code>business/</code>，工程规则是否放在 <code>engineering/</code>，领域知识是否放在 <code>domain/</code>。</li>
+</ul>
+<p>维护动作的关键判断是：<strong>这条信息下一次类似任务是否还应该被 Agent 使用？</strong> 如果答案是肯定的，就应该进入 SPEC 或 archive；如果只是本次需求的临时事实，就留在 <code>prd.md</code>、<code>design.md</code> 或 <code>summary.md</code>。</p>
+<h3 id="交付结束后的规则维护流程">交付结束后的规则维护流程</h3>
+<p>一次需求完成后，可以用下面的流程判断是否更新 SPEC。</p>
+<p><img src="../assets/diagrams/02-3.svg" alt="交付结束后的规则维护流程"></p>
+
+<p>几个判断标准可以帮助团队避免把 SPEC 写成垃圾桶：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>应该放哪里</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本次需求的临时事实</td>
+<td><code>prd.md</code> / <code>design.md</code></td>
+<td>只对当前任务有效</td>
+</tr>
+<tr>
+<td>某类需求以后都要遵守的规则</td>
+<td>focused Spec</td>
+<td>后续任务需要自动消费</td>
+</tr>
+<tr>
+<td>一次交付的取舍和踩坑</td>
+<td><code>summary.md</code> / archive</td>
+<td>作为历史案例召回</td>
+</tr>
+<tr>
+<td>代码文件的临时位置</td>
+<td>context / code refs</td>
+<td>可能随重构变化，不宜写成长期规则</td>
+</tr>
+<tr>
+<td>团队统一工程规范</td>
+<td><code>spec/team/**</code></td>
+<td>不属于单个应用</td>
+</tr>
+<tr>
+<td>应用业务不变量</td>
+<td><code>spec/app/domain/**</code> 或 <code>business/**</code></td>
+<td>属于应用知识资产</td>
+</tr>
+</tbody>
+</table></div>
+<p>SPEC 维护要克制。一次需求结束后，如果没有形成可复用规则，可以明确记录“本次无需更新 SPEC”。强行为每个需求都新增规则，最后会让选择器和人都难以判断哪些规则重要。</p>
+<h3 id="一篇-focused-spec-的质量标准">一篇 focused Spec 的质量标准</h3>
+<p>一篇好的 focused Spec 不是“内容很全”，而是“能被后续任务正确使用”。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>好的表现</th>
+<th>差的表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标题</td>
+<td>对应一类业务或工程问题</td>
+<td>对应某个文件名或一次需求名</td>
+</tr>
+<tr>
+<td>适用范围</td>
+<td>写清何时使用、何时不使用</td>
+<td>只写背景介绍</td>
+</tr>
+<tr>
+<td>规则</td>
+<td>能指导设计、计划或实现</td>
+<td>只有泛泛原则</td>
+</tr>
+<tr>
+<td>示例</td>
+<td>来自真实需求或代码约束</td>
+<td>编造理想化例子</td>
+</tr>
+<tr>
+<td>Checklist</td>
+<td>能作为交付前检查</td>
+<td>只是重复正文</td>
+</tr>
+<tr>
+<td>Source Reference</td>
+<td>能追溯来源</td>
+<td>没有出处</td>
+</tr>
+</tbody>
+</table></div>
+<p>如果一篇规则读完后，Agent 仍然不知道“当前任务该多做什么、少做什么、先确认什么”，这篇规则就还不够可执行。</p>
+<h2 id="五团队参考做法">五、团队参考做法</h2>
+<p>如果团队刚开始建设，可以先做一个简化版 SPEC 体系，不需要一开始就实现复杂 selector。</p>
+<pre><code class="language-text">.team-agent/spec/
+├── team/
+│   ├── index.md
+│   ├── architecture.md
+│   ├── implementation.md
+│   ├── verification.md
+│   └── delivery.md
+└── app/
+    ├── profile.md
+    ├── index.md
+    ├── domain/
+    │   └── index.md
+    ├── business/
+    │   └── index.md
+    └── engineering/
+        └── index.md
+</code></pre>
+<p>第一阶段只做四件事：</p>
+<ol>
+<li>Prompt 只保留流程、工具和输出格式。</li>
+<li>团队通用规则放到 <code>team/</code>。</li>
+<li>应用差异放到 <code>app/domain</code>、<code>app/business</code>、<code>app/engineering</code>。</li>
+<li>每次需求结束后，明确判断“是否需要更新规则”。</li>
+</ol>
+<p>第二阶段再做语义选择：</p>
+<ol>
+<li>为每个 focused Spec 加 metadata。</li>
+<li>根据 PRD 关键词、模块、代码路径初步选择候选规则。</li>
+<li>在设计或计划阶段显示 selected refs，让负责人可以确认。</li>
+<li>逐步引入预算控制和 required/auto 注入。</li>
+</ol>
+<p>先把规则从 Prompt 中拆出来，收益已经很明显；不要一开始就追求复杂的知识图谱。</p>
+<h3 id="常见坑">常见坑</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>坑</th>
+<th>表现</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>route page 里写大段正文</td>
+<td>index 越来越长，focused Spec 没人读</td>
+<td>index 只做导航和触发条件</td>
+</tr>
+<tr>
+<td>focused Spec 太细</td>
+<td>每个接口、每个枚举都建一篇</td>
+<td>一个 Spec 对应一类可复用规则，不对应代码文件</td>
+</tr>
+<tr>
+<td>required 过多</td>
+<td>每次任务都注入很多硬规则</td>
+<td>required 只放短硬规则，其他用 auto</td>
+</tr>
+<tr>
+<td>metadata 不维护</td>
+<td>规则存在但选不中或总被选中</td>
+<td>每次新增规则都确认 phases 和 agents</td>
+</tr>
+<tr>
+<td>规则没有来源</td>
+<td>不知道这条规则为什么存在</td>
+<td>Source Reference 写历史需求、评审结论或业务确认</td>
+</tr>
+<tr>
+<td>交付后只更新 summary</td>
+<td>后续任务找不到长期规则</td>
+<td>summary 负责案例，SPEC 负责长期规则</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="六检查清单">六、检查清单</h2>
+<p>可以用下面的问题检查团队 SPEC 体系是否健康：</p>
+<ul>
+<li>团队规则是否还主要写在 Prompt 里？</li>
+<li>同一条工程规范是否在多个应用 Agent 中重复维护？</li>
+<li>应用业务规则是否有固定目录，而不是散在 Wiki 和聊天记录中？</li>
+<li>每个规则文件是否能说明适用阶段、适用对象和来源？</li>
+<li>是否区分 route page 和 focused Spec？</li>
+<li>是否有“交付后是否更新规则”的固定动作？</li>
+<li>变更规则后是否有校验机制？</li>
+<li>Agent 读取规则时是否能追溯“为什么读了这条规则”？</li>
+</ul>
+<p>如果这些问题没有答案，优先建设 SPEC 目录和维护流程，再考虑更复杂的 Agent 能力。</p>
+<h2 id="七思考与实践">七、思考与实践</h2>
+<ol>
+<li>你们团队最常重复提醒给 AI 的三条规则是什么？它们现在写在 Prompt、Wiki、代码注释，还是有专门的规则文件？</li>
+<li>选一条近期反复踩坑的业务规则，试着判断它应该放在 <code>spec/team</code>、<code>spec/app/domain</code>、<code>spec/app/business</code> 还是 <code>spec/app/engineering</code>。</li>
+<li>如果每次需求结束都要判断“是否更新 SPEC”，你觉得团队最可能卡在哪一步？</li>
+</ol>
+<h2 id="八结尾">八、结尾</h2>
+<p>SPEC 体系的目标不是让文档变多，而是让团队知识从聊天、Prompt 和个人经验中独立出来，成为 Agent 可以稳定消费、团队可以审查、后续可以维护的工程资产。</p>
+<p>下一篇进入复杂需求拆分：当 PRD 足够大时，为什么不能直接把整篇需求交给 Agent，而要先变成功能点切片。</p></article><div class="practice-link"><a href="https://github.com/DavidDingXu/ai-coding-for-teams/blob/main/12-minimal-playbook.md" target="_blank" rel="noopener"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg> 团队最小落地包 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></div><nav class="chapter-nav" aria-label="前后篇"><a href="01.html"><span>上一篇 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></span><strong>共享运行时：不要让每个应用都重复建设 Agent</strong></a><a href="03.html"><span>下一篇 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><strong>复杂需求拆分：大 PRD 不能直接丢给 Agent</strong></a></nav><footer class="reader-footer">AI Coding 团队化实战 · <a href="../license.html">非商业使用</a><details class="community-mini"><summary>关注与交流 · 好好用 AI</summary><div class="community-section"><div><p>交流学习中的问题与实践心得。</p><p>代码问题和勘误，欢迎在 <a href="https://github.com/DavidDingXu/ai-coding-for-teams/issues" target="_blank" rel="noopener">GitHub 提交 Issue</a>。</p></div><a class="qr-link" href="../assets/wechat-official-account.jpg" target="_blank" rel="noopener" aria-label="查看好好用 AI 公众号二维码原图"><img src="../assets/wechat-official-account.jpg" alt="好好用 AI 微信公众号二维码" width="130" height="130" loading="lazy"><p class="qr-caption">微信扫码 · 点击查看原图</p></a></div></details></footer></main><aside class="context-sidebar" aria-label="本篇辅助导航"><div class="context-inner"><nav class="reading-route" aria-label="本篇路线"><details open><summary>本篇路线</summary><div class="toc">
+<ul>
+<li><a href="#一一个真实问题prompt-为什么会越写越乱">一、一个真实问题：Prompt 为什么会越写越乱</a></li>
+<li><a href="#二判断一条规则该不该进-spec">二、判断一条规则该不该进 SPEC</a></li>
+<li><a href="#三spec-目录怎么设计">三、SPEC 目录怎么设计</a></li>
+<li><a href="#四规则如何进入-agent-上下文">四、规则如何进入 Agent 上下文</a></li>
+<li><a href="#五团队参考做法">五、团队参考做法</a></li>
+<li><a href="#六检查清单">六、检查清单</a></li>
+<li><a href="#七思考与实践">七、思考与实践</a></li>
+<li><a href="#八结尾">八、结尾</a></li>
+</ul>
+</div>
+</details></nav></div></aside></div><dialog class="search-dialog" id="search-dialog" aria-labelledby="search-label"><form method="dialog" class="search-heading"><label for="course-search" id="search-label"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>搜索课程</label><button class="icon-button" aria-label="关闭搜索"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form><input id="course-search" type="search" placeholder="搜索概念、代码或问题…" autocomplete="off" spellcheck="false"><p class="search-status" id="search-status" role="status">搜索全部 14 篇文章。</p><div class="search-results" id="search-results"></div><footer>↑ ↓ 选择结果 <span>Enter 打开 · Esc 关闭</span></footer></dialog>
+<dialog class="image-viewer" id="image-viewer" aria-label="放大配图"><header><span>查看配图</span><div class="image-actions"><button type="button" id="image-size">原尺寸</button><button type="button" id="close-image" autofocus>关闭</button></div></header><div class="image-canvas"><img id="large-image" alt=""></div><footer><p id="image-description"></p><a id="original-image" target="_blank" rel="noopener">打开原图 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M10 4H4v16h16v-6"/></svg></a></footer></dialog><div class="toast" id="toast" role="status"></div></body></html>
