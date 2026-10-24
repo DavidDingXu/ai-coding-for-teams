@@ -2,8 +2,8 @@
 import hashlib,json,os,re,subprocess,tempfile
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1]
-BOOK=ROOT/'book'
+ROOT=Path(__file__).resolve().parents[2]
+BOOK=ROOT/'tools/book'
 
 def render():
     destination=BOOK/'diagrams';destination.mkdir(exist_ok=True)
